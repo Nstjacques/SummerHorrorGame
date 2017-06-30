@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MouseLook : MonoBehaviour
+public class Door_MouseLook : MonoBehaviour
 {
 	Vector2 _mouseAbsolute;
 	Vector2 _smoothMouse;
