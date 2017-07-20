@@ -113,12 +113,12 @@ public class FirstPersonDrifter: MonoBehaviour
             }
  
             // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
-            if (!Input.GetButton("Jump"))
-                jumpTimer++;
-            else if (jumpTimer >= antiBunnyHopFactor) {
-                moveDirection.y = jumpSpeed;
-                jumpTimer = 0;
-            }
+			if (!Input.GetButton("Jump"))
+				jumpTimer++;
+			else if (jumpTimer >= antiBunnyHopFactor) {
+				moveDirection.y = jumpSpeed;
+				jumpTimer = 0;
+			}
         }
         else {
             // If we stepped over a cliff or something, set the height at which we started falling
