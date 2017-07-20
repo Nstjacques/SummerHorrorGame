@@ -2,7 +2,7 @@
 
 A haunted house heist game made in Unity
 
-##Credits
+## Credits
 
 Frank Gallagher - Art Direction, Design
 
@@ -12,7 +12,7 @@ Ethan Thibault - Production, Audio, Design
 
 ---
 
-##Assets Added to Project
+## Assets Added to Project
 
 [First Person Drifter](http://torahhorse.com/first-person-drifter-controller-for-unity3d)
 
