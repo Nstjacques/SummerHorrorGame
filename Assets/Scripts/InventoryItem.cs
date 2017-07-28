@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class InventoryItem : ScriptableObject {
+public class InventoryItem {
 	public string itemName = "New Item";
 	public Texture itemIcon = null;
 	public Rigidbody itemObject = null;

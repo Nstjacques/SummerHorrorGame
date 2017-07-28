@@ -8,6 +8,8 @@ using System.Collections;
 [RequireComponent (typeof (CharacterController))]
 public class FirstPersonDrifter: MonoBehaviour
 {
+	public GameObject CubePickup;
+
     public float walkSpeed = 6.0f;
     public float runSpeed = 10.0f;
  
@@ -68,6 +70,11 @@ public class FirstPersonDrifter: MonoBehaviour
         float inputY = Input.GetAxis("Vertical");
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed)? .7071f : 1.0f;
+
+		if (CubePickup == null) {
+			walkSpeed = walkSpeed - 3;
+		}
+			
  
         if (grounded) {
             bool sliding = false;

@@ -234,7 +234,8 @@ Prefab:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 584735252}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114517025115841746, guid: 4378f2f98085cea439015c4c89cb1b09, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4378f2f98085cea439015c4c89cb1b09, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &436977976
@@ -294,6 +295,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2949ec15f4c83a4ca6529a1614f88b6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &452882510 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1227586769561182, guid: 4378f2f98085cea439015c4c89cb1b09,
+    type: 2}
+  m_PrefabInternal: {fileID: 413396490}
+--- !u!114 &452882512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452882510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b11d3f26a3427c408581037ecae6d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 584735252}
+  AspectRatio: {fileID: 0}
 --- !u!114 &584735252 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114482150361783836, guid: d02f07bed16309c43a9bdf7a22f90048,
@@ -707,6 +726,10 @@ Prefab:
     - target: {fileID: 4655211533168896, guid: 652d76317f1b09449a83293a63940fed, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009145739265448, guid: 652d76317f1b09449a83293a63940fed, type: 2}
+      propertyPath: m_Name
+      value: Cube Pickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 652d76317f1b09449a83293a63940fed, type: 2}

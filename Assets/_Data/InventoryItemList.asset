@@ -12,7 +12,40 @@ MonoBehaviour:
   m_Name: InventoryItemList
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - itemName: Cube Pickup
+    itemIcon: {fileID: 0}
+    itemObject: {fileID: 54048106536828214, guid: 652d76317f1b09449a83293a63940fed,
+      type: 2}
+    isUnique: 1
+    isIndestructible: 0
+    isQuestItem: 0
+    isStackable: 0
+    destroyOnUse: 0
+    encumbranceValue: 3
+  - itemName: New Item
+    itemIcon: {fileID: 0}
+    itemObject: {fileID: 0}
+    isUnique: 0
+    isIndestructible: 0
+    isQuestItem: 0
+    isStackable: 0
+    destroyOnUse: 0
+    encumbranceValue: 0
+  - itemName: New Item
+    itemIcon: {fileID: 0}
+    itemObject: {fileID: 0}
+    isUnique: 0
+    isIndestructible: 0
+    isQuestItem: 0
+    isStackable: 0
+    destroyOnUse: 0
+    encumbranceValue: 0
+  - itemName: New Item
+    itemIcon: {fileID: 0}
+    itemObject: {fileID: 0}
+    isUnique: 0
+    isIndestructible: 0
+    isQuestItem: 0
+    isStackable: 0
+    destroyOnUse: 0
+    encumbranceValue: 0
