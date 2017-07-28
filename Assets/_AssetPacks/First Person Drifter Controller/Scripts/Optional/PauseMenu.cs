@@ -119,7 +119,7 @@ public class PauseMenu : MonoBehaviour
 				{
 					print("Reset Level");
 					PauseGame();
-					Application.LoadLevel(Application.loadedLevel);
+					// Application.LoadLevel(Application.loadedLevel);
 				}
 				
 				// options button
