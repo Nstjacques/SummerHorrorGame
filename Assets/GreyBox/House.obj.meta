@@ -1,0 +1,186 @@
+fileFormatVersion: 2
+guid: 521deb5a191676048a78817ad37fb5c7
+timeCreated: 1501263391
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Attic_Floor3
+    100002: DiningRoom_Floor1
+    100004: Floor1_BasementEntr
+    100006: Floor1_Hall
+    100008: Floor1_Kitchen
+    100010: Floor1_Lounge
+    100012: Floor1_Pantry
+    100014: Floor1_Study
+    100016: Floor2_GuestRoom
+    100018: Floor2_Hall2
+    100020: Floor2_Library
+    100022: Floor2_TBD1
+    100024: Floor2_TBD3
+    100026: Floor3_Observatory1
+    100028: GazeboHead_Roof
+    100030: //RootNode
+    100032: pCube1_Porch
+    100034: TBD4_Floor2
+    400000: Attic_Floor3
+    400002: DiningRoom_Floor1
+    400004: Floor1_BasementEntr
+    400006: Floor1_Hall
+    400008: Floor1_Kitchen
+    400010: Floor1_Lounge
+    400012: Floor1_Pantry
+    400014: Floor1_Study
+    400016: Floor2_GuestRoom
+    400018: Floor2_Hall2
+    400020: Floor2_Library
+    400022: Floor2_TBD1
+    400024: Floor2_TBD3
+    400026: Floor3_Observatory1
+    400028: GazeboHead_Roof
+    400030: //RootNode
+    400032: pCube1_Porch
+    400034: TBD4_Floor2
+    2300000: Attic_Floor3
+    2300002: DiningRoom_Floor1
+    2300004: Floor1_BasementEntr
+    2300006: Floor1_Hall
+    2300008: Floor1_Kitchen
+    2300010: Floor1_Lounge
+    2300012: Floor1_Pantry
+    2300014: Floor1_Study
+    2300016: Floor2_GuestRoom
+    2300018: Floor2_Hall2
+    2300020: Floor2_Library
+    2300022: Floor2_TBD1
+    2300024: Floor2_TBD3
+    2300026: Floor3_Observatory1
+    2300028: GazeboHead_Roof
+    2300030: pCube1_Porch
+    2300032: TBD4_Floor2
+    3300000: Attic_Floor3
+    3300002: DiningRoom_Floor1
+    3300004: Floor1_BasementEntr
+    3300006: Floor1_Hall
+    3300008: Floor1_Kitchen
+    3300010: Floor1_Lounge
+    3300012: Floor1_Pantry
+    3300014: Floor1_Study
+    3300016: Floor2_GuestRoom
+    3300018: Floor2_Hall2
+    3300020: Floor2_Library
+    3300022: Floor2_TBD1
+    3300024: Floor2_TBD3
+    3300026: Floor3_Observatory1
+    3300028: GazeboHead_Roof
+    3300030: pCube1_Porch
+    3300032: TBD4_Floor2
+    4300000: Attic_Floor3
+    4300002: DiningRoom_Floor1
+    4300004: Floor1_BasementEntr
+    4300006: Floor1_Hall
+    4300008: Floor1_Kitchen
+    4300010: Floor1_Lounge
+    4300012: Floor1_Pantry
+    4300014: Floor1_Study
+    4300016: Floor2_GuestRoom
+    4300018: Floor2_Hall2
+    4300020: Floor2_Library
+    4300022: Floor2_TBD1
+    4300024: Floor2_TBD3
+    4300026: Floor3_Observatory1
+    4300028: GazeboHead_Roof
+    4300030: pCube1_Porch
+    4300032: TBD4_Floor2
+    6400000: Attic_Floor3
+    6400002: DiningRoom_Floor1
+    6400004: Floor1_BasementEntr
+    6400006: Floor1_Hall
+    6400008: Floor1_Kitchen
+    6400010: Floor1_Lounge
+    6400012: Floor1_Pantry
+    6400014: Floor1_Study
+    6400016: Floor2_GuestRoom
+    6400018: Floor2_Hall2
+    6400020: Floor2_Library
+    6400022: Floor2_TBD1
+    6400024: Floor2_TBD3
+    6400026: Floor3_Observatory1
+    6400028: GazeboHead_Roof
+    6400030: pCube1_Porch
+    6400032: TBD4_Floor2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
