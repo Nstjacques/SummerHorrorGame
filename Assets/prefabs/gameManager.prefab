@@ -54,3 +54,4 @@ MonoBehaviour:
   canClick: 0
   hitObject: 0
   currentClick: {fileID: 0}
+  SecondPersonDrifter: {fileID: 0}
