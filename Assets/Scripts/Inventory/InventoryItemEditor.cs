@@ -58,7 +58,7 @@ public class InventoryItemEditor : EditorWindow {
 			}
 			GUILayout.EndHorizontal ();
 		}
-
+			
 		GUILayout.Space(20);
 
 		if (inventoryItemList != null) 

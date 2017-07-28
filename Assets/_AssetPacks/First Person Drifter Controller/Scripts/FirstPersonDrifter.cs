@@ -45,7 +45,7 @@ public class FirstPersonDrifter: MonoBehaviour
     private bool grounded = false;
     private CharacterController controller;
     private Transform myTransform;
-    private float speed;
+    public float speed;
     private RaycastHit hit;
     private float fallStartLevel;
     private bool falling;
@@ -70,10 +70,6 @@ public class FirstPersonDrifter: MonoBehaviour
         float inputY = Input.GetAxis("Vertical");
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed)? .7071f : 1.0f;
-
-		if (CubePickup == null) {
-			walkSpeed = walkSpeed - 3;
-		}
 			
  
         if (grounded) {

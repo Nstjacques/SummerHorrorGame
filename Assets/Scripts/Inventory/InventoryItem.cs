@@ -12,4 +12,5 @@ public class InventoryItem {
 	public bool isStackable = false;
 	public bool destroyOnUse = false;  
 	public float encumbranceValue = 0;
+	public Vector3[] spawnPoints;
 }
