@@ -12,6 +12,7 @@ public class ReticleRaycast : MonoBehaviour {
 public gameManager gameManager;
 public Image AspectRatio;
 private Ray theRay;
+public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
 void FixedUpdate() 
 {	
@@ -31,6 +32,17 @@ void FixedUpdate()
 			//AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
 			gameManager.canClick = false;
 		}
+
+		if (Input.GetMouseButtonDown (0) && gameManager.canClick == true) {
+				Destroy(hit.collider.gameObject);
+				changeSpeed(1f);
+		}
 	}
+}
+
+
+
+private void changeSpeed(float newSpeed){
+	controller.m_WalkSpeed -= newSpeed;
 }
 }
