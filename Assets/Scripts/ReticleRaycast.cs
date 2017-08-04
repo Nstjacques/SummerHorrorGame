@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public gameManager gameManager;
 public Image AspectRatio;
 private Ray theRay;
 public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
+public int passcode = 0;
 
 void FixedUpdate() 
 {	
@@ -21,7 +23,7 @@ void FixedUpdate()
 	if (Physics.Raycast(transform.position, transform.forward, out hit)){
 		gameManager.hitObject = hit.collider.gameObject;
 		//print("There is something in front of the object!");
-		if (hit.collider.gameObject.tag == "inventoryItem"){
+			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe"){
 			//print ("Targetable object found");
 			//AspectRatio.rectTransform.localScale = new Vector3(1,1,1);
 			gameManager.canClick = true;
@@ -33,10 +35,22 @@ void FixedUpdate()
 			gameManager.canClick = false;
 		}
 
-		if (Input.GetMouseButtonDown (0) && gameManager.canClick == true) {
+			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
 				Destroy(hit.collider.gameObject);
-				changeSpeed(1f);
+				changeSpeed(0.2f);
 		}
+
+			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "safe") {
+				if (passcode == 4) {
+					Debug.Log ("Bingo");
+				} else {
+				}
+			}
+
+			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "passcode") {
+				passcode += 1;
+				Destroy(hit.collider.gameObject);
+			}
 	}
 }
 
@@ -45,4 +59,5 @@ void FixedUpdate()
 private void changeSpeed(float newSpeed){
 	controller.m_WalkSpeed -= newSpeed;
 }
+		
 }
