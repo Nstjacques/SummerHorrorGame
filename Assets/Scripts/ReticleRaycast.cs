@@ -39,7 +39,7 @@ void FixedUpdate()
 
 			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
 				InventoryManager.AddObject (hit.collider.gameObject);
-				Destroy(hit.collider.gameObject);
+				//Destroy(hit.collider.gameObject);
 				changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
 		}
 
