@@ -16,6 +16,7 @@ private Ray theRay;
 public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 public int passcode = 0;
 public UI_Manager UI_Manager;
+	public InventoryManager InventoryManager;
 
 void FixedUpdate() 
 {	
@@ -37,8 +38,9 @@ void FixedUpdate()
 		}
 
 			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
+				InventoryManager.AddObject (hit.collider.gameObject);
 				Destroy(hit.collider.gameObject);
-				changeSpeed(0.2f);
+				changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
 		}
 
 			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "safe") {
