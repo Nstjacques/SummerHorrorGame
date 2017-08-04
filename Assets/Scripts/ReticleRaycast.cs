@@ -15,6 +15,7 @@ public Image AspectRatio;
 private Ray theRay;
 public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 public int passcode = 0;
+public UI_Manager UI_Manager;
 
 void FixedUpdate() 
 {	
@@ -44,6 +45,7 @@ void FixedUpdate()
 				if (passcode == 4) {
 					Debug.Log ("Bingo");
 				} else {
+					StartCoroutine(UI_Manager.Message ("I don't have the entire passcode..."));
 				}
 			}
 
@@ -51,13 +53,18 @@ void FixedUpdate()
 				passcode += 1;
 				Destroy(hit.collider.gameObject);
 			}
+		}
 	}
-}
 
 
 
-private void changeSpeed(float newSpeed){
-	controller.m_WalkSpeed -= newSpeed;
-}
-		
+	private void changeSpeed(float newSpeed){
+		controller.m_WalkSpeed -= newSpeed;
+	}
+
+//	public void Message (string message) {
+//		guiText.guiText = message;
+//		GetComponent<GUIText>().enabled = true;
+//		GetComponent<GUIText>().enabled = false;
+//	}	
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - inventoryItem
+  - safe
   layers:
   - Default
   - TransparentFX
