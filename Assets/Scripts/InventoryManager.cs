@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour {
 	public int inventorySlots;
 	public float currentWeight;
 	public int score;
 	private ItemAttribute itemAttribute;
-	public GameObject[] arrayOfObjects;
+	public List<GameObject> arrayOfObjects;
 	public GameObject BadItemPrison;
 	private Vector3 BadItemPrisonLocation;
 
 	// Use this for initialization
 	void Start () {
-		arrayOfObjects = new GameObject[inventorySlots];
+		// arrayOfObjects = new List<GameObject>[inventorySlots];
 		BadItemPrisonLocation = BadItemPrison.transform.position;
 	}
 	
@@ -23,7 +24,7 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	public void AddObject(GameObject item) {
-		arrayOfObjects.add(item);
+		arrayOfObjects.Add(item);
 		item.transform.position = (BadItemPrisonLocation);
 		itemAttribute = item.GetComponent<ItemAttribute> ();
 		currentWeight -= itemAttribute.Weight;

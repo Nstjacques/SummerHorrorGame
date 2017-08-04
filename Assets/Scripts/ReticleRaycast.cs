@@ -27,21 +27,17 @@ void FixedUpdate()
 		//print("There is something in front of the object!");
 			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe"){
 			//print ("Targetable object found");
-			//AspectRatio.rectTransform.localScale = new Vector3(1,1,1);
+			AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
 			gameManager.canClick = true;
 				Debug.Log ("Spooky");
 				gameManager.currentClick = hit.transform.gameObject;
-		}
-		else {
-			//AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
-			gameManager.canClick = false;
-		}
+			}
 
 			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
 				InventoryManager.AddObject (hit.collider.gameObject);
 				//Destroy(hit.collider.gameObject);
 				changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
-		}
+			}
 
 			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "safe") {
 				if (passcode == 4) {
@@ -56,17 +52,12 @@ void FixedUpdate()
 				Destroy(hit.collider.gameObject);
 			}
 		}
+		else {
+			AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
+			gameManager.canClick = false;
+		}
 	}
-
-
-
 	private void changeSpeed(float newSpeed){
 		controller.m_WalkSpeed -= newSpeed;
-	}
-
-//	public void Message (string message) {
-//		guiText.guiText = message;
-//		GetComponent<GUIText>().enabled = true;
-//		GetComponent<GUIText>().enabled = false;
-//	}	
+	}	
 }
