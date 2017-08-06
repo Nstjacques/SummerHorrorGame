@@ -144,6 +144,9 @@ MonoBehaviour:
   ui_display_time: 3
   panel: {fileID: 0}
   text: {fileID: 0}
+  inventory_panel: {fileID: 0}
+  item_panel_prefab: {fileID: 1238585278142542, guid: 463d3cfca43ad7547a27a43ff693b84d,
+    type: 2}
 --- !u!114 &114135767629067514
 MonoBehaviour:
   m_ObjectHideFlags: 1

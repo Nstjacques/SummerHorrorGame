@@ -7,9 +7,9 @@ using UnityEngine.UI;
 /* Public */
 public class ReticleRaycast : MonoBehaviour {
 	[Header("Managers")]
-	public GameManager GameManager;
-	public UI_Manager UI_Manager;
-	public InventoryManager InventoryManager;
+	private GameManager GameManager;
+	private UI_Manager UI_Manager;
+	private InventoryManager InventoryManager;
 
 	[Header("The aspect ratio image")]
 	public Image AspectRatio;
@@ -21,6 +21,9 @@ public class ReticleRaycast : MonoBehaviour {
 	// Instead of this having to be set publically, it'll just get it at the beginning of the game!
 	void Start(){
 		controller = this.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+		GameManager = GameObject.Find("Managers/GameManager").GetComponent<GameManager>();
+		UI_Manager = GameObject.Find("Managers/UI_Manager").GetComponent<UI_Manager>();
+		InventoryManager = GameObject.Find("Managers/InventoryManager").GetComponent<InventoryManager>();
 	}
 
 	void FixedUpdate() 

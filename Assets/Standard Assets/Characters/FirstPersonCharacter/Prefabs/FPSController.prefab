@@ -452,9 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b11d3f26a3427c408581037ecae6d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
-  UI_Manager: {fileID: 0}
-  InventoryManager: {fileID: 0}
   AspectRatio: {fileID: 0}
 --- !u!114 &114438216459380336
 MonoBehaviour:
