@@ -122,8 +122,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1435680953491750}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -106.74093, y: -22.1188, z: -117.59441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4203857762632820}
@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canClick: 0
-  hitObject: 0
   currentClick: {fileID: 0}
+  passcode: 0
 --- !u!114 &114854815234219048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,5 +172,4 @@ MonoBehaviour:
   inventorySlots: 0
   currentWeight: 0
   score: 0
-  arrayOfObjects: []
   BadItemPrison: {fileID: 0}

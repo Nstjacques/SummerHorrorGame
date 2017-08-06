@@ -4,59 +4,71 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-/* Hi Nick! This is a script for always running a raycast in FixedUpdate that checks if an object has a tag -
- if it does, then it returns a boolean to a GameManager script as True, so the player can click!"
- Attach this to your main camera object. */
-
+/* Public */
 public class ReticleRaycast : MonoBehaviour {
-
-public gameManager gameManager;
-public Image AspectRatio;
-private Ray theRay;
-public UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
-public int passcode = 0;
-public UI_Manager UI_Manager;
+	[Header("Managers")]
+	public GameManager GameManager;
+	public UI_Manager UI_Manager;
 	public InventoryManager InventoryManager;
 
-void FixedUpdate() 
-{	
-	RaycastHit hit = new RaycastHit();
+	[Header("The aspect ratio image")]
+	public Image AspectRatio;
+	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
-	if (Physics.Raycast(transform.position, transform.forward, out hit)){
-		gameManager.hitObject = hit.collider.gameObject;
-		//print("There is something in front of the object!");
+	/* Private */
+	private Ray theRay;
+
+	// Instead of this having to be set publically, it'll just get it at the beginning of the game!
+	void Start(){
+		controller = this.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
+	}
+
+	void FixedUpdate() 
+	{	
+		RaycastHit hit = new RaycastHit();
+
+		// If the raycast hits an object
+		if (Physics.Raycast(transform.position, transform.forward, out hit)){
+			
+			/* If the object it hits is an object that can be picked up or the safe,
+			Let the player click on it, and create the aspect ratio effect */
 			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe"){
-			//print ("Targetable object found");
-			AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
-			gameManager.canClick = true;
-				Debug.Log ("Spooky");
-				gameManager.currentClick = hit.transform.gameObject;
+				// TODO: Fade this aspect ratio effect, maybe by lerping?
+				AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
+				GameManager.canClick = true;
+				// Debug.Log ("Spooky");
 			}
 
-			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
+			/* If the player clicks an object that can be picked up, add it to the inventory */
+			if (Input.GetMouseButtonDown (0) && GameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
+				// GameManager.currentClick = hit.transform.gameObject;
 				InventoryManager.AddObject (hit.collider.gameObject);
-				//Destroy(hit.collider.gameObject);
 				changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
 			}
 
-			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "safe") {
-				if (passcode == 4) {
+			/* If the player clicks the safe, check if the player has all 4 pieces of the combination */
+			if (Input.GetMouseButtonDown (0) && GameManager.canClick == true && hit.collider.gameObject.tag == "safe") {
+				if (GameManager.passcode == 4) {
 					Debug.Log ("Bingo");
 				} else {
-					StartCoroutine(UI_Manager.Message ("I don't have the entire passcode..."));
+					StartCoroutine(UI_Manager.Message ("I don't have the entire combination..."));
 				}
 			}
 
-			if (Input.GetMouseButtonDown (0) && gameManager.canClick == true && hit.collider.gameObject.tag == "passcode") {
-				passcode += 1;
+			/* If the player clicks an object tagged "passcode", destroy that object,
+			and the player now has part of the passcode! */
+			if (Input.GetMouseButtonDown (0) && GameManager.canClick == true && hit.collider.gameObject.tag == "passcode") {
+				GameManager.passcode += 1;
 				Destroy(hit.collider.gameObject);
 			}
 		}
 		else {
 			AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
-			gameManager.canClick = false;
+			GameManager.canClick = false;
 		}
 	}
+
+	// TODO: Move this method to the gamemanager?
 	private void changeSpeed(float newSpeed){
 		controller.m_WalkSpeed -= newSpeed;
 	}	

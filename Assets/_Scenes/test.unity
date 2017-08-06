@@ -465,36 +465,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114125725600317382, guid: 88c9bf87e9c113042b4ef36ed991a8f7,
+        type: 2}
+      propertyPath: itemName
+      value: vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 114125725600317382, guid: 88c9bf87e9c113042b4ef36ed991a8f7,
+        type: 2}
+      propertyPath: Weight
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114125725600317382, guid: 88c9bf87e9c113042b4ef36ed991a8f7,
+        type: 2}
+      propertyPath: Value
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88c9bf87e9c113042b4ef36ed991a8f7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &590688885 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-  m_PrefabInternal: {fileID: 867965027}
---- !u!114 &590688889 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
-    type: 2}
-  m_PrefabInternal: {fileID: 867965027}
-  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
---- !u!114 &590688892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 590688885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b11d3f26a3427c408581037ecae6d54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1848498298}
-  AspectRatio: {fileID: 1475392974}
-  controller: {fileID: 590688889}
-  passcode: 0
-  UI_Manager: {fileID: 2036749295}
-  InventoryManager: {fileID: 1046006312}
 --- !u!1 &769115285
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,14 +601,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-      propertyPath: m_WalkSpeed
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-      propertyPath: m_Volume
-      value: 0.25
-      objectReference: {fileID: 0}
+    - target: {fileID: 114343038569441850, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1848498298}
+    - target: {fileID: 114343038569441850, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: UI_Manager
+      value: 
+      objectReference: {fileID: 2036749295}
+    - target: {fileID: 114343038569441850, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: InventoryManager
+      value: 
+      objectReference: {fileID: 1046006312}
+    - target: {fileID: 114343038569441850, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: AspectRatio
+      value: 
+      objectReference: {fileID: 1475392974}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 1946643767}
   - component: {fileID: 1946643766}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Safe
   m_TagString: safe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1009,7 +1009,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1032d41f900276c40a9dd24f55b7d420, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

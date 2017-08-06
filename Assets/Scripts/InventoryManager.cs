@@ -1,35 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour {
+	
+	/* Public */
 	public int inventorySlots;
 	public float currentWeight;
 	public int score;
-	private ItemAttribute itemAttribute;
-	public List<GameObject> arrayOfObjects;
+	public List<Item> listofObjects = new List<Item>();
 	public GameObject BadItemPrison;
+	
+	/* Private */
 	private Vector3 BadItemPrisonLocation;
-
-	// Use this for initialization
+	private ItemAttribute itemAttribute;
+	
 	void Start () {
-		// arrayOfObjects = new List<GameObject>[inventorySlots];
 		BadItemPrisonLocation = BadItemPrison.transform.position;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
 
 	public void AddObject(GameObject item) {
-		arrayOfObjects.Add(item);
-		item.transform.position = (BadItemPrisonLocation);
 		itemAttribute = item.GetComponent<ItemAttribute> ();
+		// Move the object to prison
+		item.transform.position = (BadItemPrisonLocation);
+		// Add the object to invetory list
+		// Takes name, weight, and value
+		listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value));
+		Debug.Log(listofObjects[0]);
+		// Change player attributes
 		currentWeight -= itemAttribute.Weight;
 		score += itemAttribute.Value;
+		// Debug
 		Debug.Log (currentWeight);
 		Debug.Log (score);
+		
 	}
 }

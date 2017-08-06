@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 8200000}
   - component: {fileID: 114438216459380336}
-  - component: {fileID: 114332892215337940}
+  - component: {fileID: 114343038569441850}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -135,7 +135,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114332892215337940
+--- !u!114 &114343038569441850
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -452,12 +452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b11d3f26a3427c408581037ecae6d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  AspectRatio: {fileID: 0}
-  controller: {fileID: 11400000}
-  passcode: 0
+  GameManager: {fileID: 0}
   UI_Manager: {fileID: 0}
   InventoryManager: {fileID: 0}
+  AspectRatio: {fileID: 0}
 --- !u!114 &114438216459380336
 MonoBehaviour:
   m_ObjectHideFlags: 1
