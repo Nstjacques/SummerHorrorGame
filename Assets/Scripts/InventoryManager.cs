@@ -34,9 +34,8 @@ public class InventoryManager : MonoBehaviour {
 		// Change player attributes
 		currentWeight -= itemAttribute.Weight;
 		score += itemAttribute.Value;
-		// Debug
+		/* // Debug
 		Debug.Log (currentWeight);
-		Debug.Log (score);
-		
+		Debug.Log (score); */
 	}
 }

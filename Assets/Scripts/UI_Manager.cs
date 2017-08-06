@@ -23,9 +23,10 @@ public class UI_Manager : MonoBehaviour {
 	public Text text;
 
 	[Header("Inventory")]
-	private bool isInventoryOpen;
 	public GameObject inventory_panel;
 	public GameObject item_panel_prefab;
+	public GameObject passcode_status_panel;
+	private bool isInventoryOpen;
 	
 	/* Private */
 	private string weight_str = "Weight: ";
@@ -55,9 +56,14 @@ public class UI_Manager : MonoBehaviour {
 
 	public void Inventory(){
 		// TODO: Make this so it doesn't keep spawning new children
+		// TODO: Lock the mouse so they can click stuff
+		/* TODO: Instantiate the item panels as giant buttons, 
+		so they can be programmed to delete the object it represents and spawn it*/
 		if (isInventoryOpen == false){
 			isInventoryOpen = true;
 			inventory_panel.SetActive(true);
+			// TODO: Run Function that checks/updates the passcode status
+			passcode_status_panel.SetActive(true);
 			for (int i=0; i < InventoryManager.listofObjects.Count; i++){
 				GameObject Item = Instantiate(item_panel_prefab, inventory_panel.transform);
 				Transform stats_panel = Item.transform.GetChild(0);
@@ -68,6 +74,7 @@ public class UI_Manager : MonoBehaviour {
 		}
 		else{
 			inventory_panel.SetActive(false);
+			passcode_status_panel.SetActive(false);
 			isInventoryOpen = false;
 		}
 	}
