@@ -172,6 +172,11 @@ Prefab:
       propertyPath: passcode_status_panel
       value: 
       objectReference: {fileID: 1086263164}
+    - target: {fileID: 114135767629067514, guid: 8dd5784f89c96664387d67b69e643236,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dd5784f89c96664387d67b69e643236, type: 2}
   m_IsPrefabParent: 0
