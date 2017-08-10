@@ -27,9 +27,10 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject item_panel_prefab;
 	public GameObject passcode_status_panel;
 	private bool isInventoryOpen;
+	private int objectPanelsThatExist;
 
 	[Header("Mouse Control")]
-	CursorLockMode wantedMode;
+	public CursorLockMode wantedMode;
 	
 	/* Private */
 	private string weight_str = "Weight: ";
@@ -38,6 +39,7 @@ public class UI_Manager : MonoBehaviour {
 	void Start () {
 		GameManager = GameObject.Find("Managers/GameManager").GetComponent<GameManager>();
 		InventoryManager = GameObject.Find("Managers/InventoryManager").GetComponent<InventoryManager>();
+		objectPanelsThatExist = 0;
 	}
 	
 	void Update () {
@@ -70,15 +72,16 @@ public class UI_Manager : MonoBehaviour {
 			Cursor.visible = true;
 			// TODO: Run Function that checks/updates the passcode status
 			passcode_status_panel.SetActive(true);
-			for (int i=0; i < InventoryManager.listofObjects.Count; i++){
+			for (int i=objectPanelsThatExist; i < InventoryManager.listofObjects.Count; i++){
 				GameObject Item = Instantiate(item_panel_prefab, inventory_panel.transform);
 				Transform stats_panel = Item.transform.GetChild(0);
 				stats_panel.GetChild(0).GetComponent<Text>().text = InventoryManager.listofObjects[i].Name;
 				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + InventoryManager.listofObjects[i].Value.ToString();
 				stats_panel.GetChild(2).GetComponent<Text>().text = value_str + InventoryManager.listofObjects[i].Weight.ToString();
+				objectPanelsThatExist++;
 			}
 		}
-		else{
+		else {
 			inventory_panel.SetActive(false);
 			passcode_status_panel.SetActive(false);
 			isInventoryOpen = false;
