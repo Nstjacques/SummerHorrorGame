@@ -27,6 +27,9 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject item_panel_prefab;
 	public GameObject passcode_status_panel;
 	private bool isInventoryOpen;
+
+	[Header("Mouse Control")]
+	CursorLockMode wantedMode;
 	
 	/* Private */
 	private string weight_str = "Weight: ";
@@ -40,6 +43,7 @@ public class UI_Manager : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.I)){
 			Debug.Log("Inventory!");
+			Cursor.lockState = wantedMode;
 			Inventory();
 		}
 	}
@@ -62,6 +66,8 @@ public class UI_Manager : MonoBehaviour {
 		if (isInventoryOpen == false){
 			isInventoryOpen = true;
 			inventory_panel.SetActive(true);
+			Cursor.lockState = wantedMode = CursorLockMode.Confined;
+			Cursor.visible = true;
 			// TODO: Run Function that checks/updates the passcode status
 			passcode_status_panel.SetActive(true);
 			for (int i=0; i < InventoryManager.listofObjects.Count; i++){
@@ -76,6 +82,8 @@ public class UI_Manager : MonoBehaviour {
 			inventory_panel.SetActive(false);
 			passcode_status_panel.SetActive(false);
 			isInventoryOpen = false;
+			Cursor.lockState = wantedMode = CursorLockMode.None;
+			Cursor.visible = false;
 		}
 	}
 }
