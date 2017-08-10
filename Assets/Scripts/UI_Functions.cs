@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class UI_Functions : MonoBehaviour {
 	public GameObject ControlsPanelObj;
 
-	// TODO: Make update function that listens for "Cancel" button disables panels if they are active
-
 	/* Main Menu */
 	public void PlayGame(){
 		SceneManager.LoadScene(1);
@@ -15,10 +13,12 @@ public class UI_Functions : MonoBehaviour {
 	public void ControlsPanel(){
 		//	TODO: Find the Controls Panel, set active
 		ControlsPanelObj.SetActive(true);
-		
 	}
 
 	/* Pause Menu */
+	public void Resume(){
+		GameObject.Find("Managers/GameManager").GetComponent<GameManager>().Pause();
+	}
 	public void Restart(){
 		// Reloads the current scene
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

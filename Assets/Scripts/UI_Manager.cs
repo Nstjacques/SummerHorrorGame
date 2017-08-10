@@ -29,8 +29,8 @@ public class UI_Manager : MonoBehaviour {
 	private bool isInventoryOpen;
 	private int objectPanelsThatExist;
 
-	[Header("Mouse Control")]
-	public CursorLockMode wantedMode;
+	[Header("Pause Menu")]
+	public GameObject Pause_Menu;
 	
 	/* Private */
 	private string weight_str = "Weight: ";
@@ -45,8 +45,10 @@ public class UI_Manager : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.I)){
 			Debug.Log("Inventory!");
-			Cursor.lockState = wantedMode;
 			Inventory();
+		}
+		if (Input.GetKeyDown(KeyCode.P)){
+			GameManager.Pause();
 		}
 	}
 
@@ -61,30 +63,37 @@ public class UI_Manager : MonoBehaviour {
 	}
 
 	public void Inventory(){
-		// TODO: Lock the mouse so they can click stuff
 		/* TODO: Instantiate the item panels as giant buttons, 
 		so they can be programmed to delete the object it represents and spawn it*/
 		if (isInventoryOpen == false){
 			isInventoryOpen = true;
 			GameManager.DisablePlayerController(true);
 			inventory_panel.SetActive(true);
+			
 			// TODO: Run Function that checks/updates the passcode status
 			passcode_status_panel.SetActive(true);
+			
 			for (int i = objectPanelsThatExist; i < InventoryManager.listofObjects.Count; i++){
 				GameObject Item = Instantiate(item_panel_prefab, inventory_panel.transform);
+				
+				// Adds listener for deleting objects!
 				Button button = Item.GetComponent<Button>();
 				button.onClick.AddListener(delegate {InventoryManager.DropObject (i);}); 
+				
+				// Populates the UI with all the important information
 				Transform stats_panel = Item.transform.GetChild(0);
 				stats_panel.GetChild(0).GetComponent<Text>().text = InventoryManager.listofObjects[i].Name;
 				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + InventoryManager.listofObjects[i].Value.ToString();
 				stats_panel.GetChild(2).GetComponent<Text>().text = value_str + InventoryManager.listofObjects[i].Weight.ToString();
+				
+				// This int tracks how many panels have been made, so it only creates new ones whenever you open the inventory!
 				objectPanelsThatExist++;
 			}
 		}
 		else {
+			isInventoryOpen = false;
 			inventory_panel.SetActive(false);
 			passcode_status_panel.SetActive(false);
-			isInventoryOpen = false;
 			GameManager.DisablePlayerController(false);
 		}
 	}
