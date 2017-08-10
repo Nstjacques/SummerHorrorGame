@@ -61,19 +61,19 @@ public class UI_Manager : MonoBehaviour {
 	}
 
 	public void Inventory(){
-		// TODO: Make this so it doesn't keep spawning new children
 		// TODO: Lock the mouse so they can click stuff
 		/* TODO: Instantiate the item panels as giant buttons, 
 		so they can be programmed to delete the object it represents and spawn it*/
 		if (isInventoryOpen == false){
 			isInventoryOpen = true;
+			GameManager.DisablePlayerController(true);
 			inventory_panel.SetActive(true);
-			Cursor.lockState = wantedMode = CursorLockMode.Confined;
-			Cursor.visible = true;
 			// TODO: Run Function that checks/updates the passcode status
 			passcode_status_panel.SetActive(true);
-			for (int i=objectPanelsThatExist; i < InventoryManager.listofObjects.Count; i++){
+			for (int i = objectPanelsThatExist; i < InventoryManager.listofObjects.Count; i++){
 				GameObject Item = Instantiate(item_panel_prefab, inventory_panel.transform);
+				Button button = Item.GetComponent<Button>();
+				button.onClick.AddListener(delegate {InventoryManager.DropObject (i);}); 
 				Transform stats_panel = Item.transform.GetChild(0);
 				stats_panel.GetChild(0).GetComponent<Text>().text = InventoryManager.listofObjects[i].Name;
 				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + InventoryManager.listofObjects[i].Value.ToString();
@@ -85,8 +85,7 @@ public class UI_Manager : MonoBehaviour {
 			inventory_panel.SetActive(false);
 			passcode_status_panel.SetActive(false);
 			isInventoryOpen = false;
-			Cursor.lockState = wantedMode = CursorLockMode.None;
-			Cursor.visible = false;
+			GameManager.DisablePlayerController(false);
 		}
 	}
 }

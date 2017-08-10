@@ -38,4 +38,8 @@ public class InventoryManager : MonoBehaviour {
 		Debug.Log (currentWeight);
 		Debug.Log (score); */
 	}
+
+	public void DropObject(int item_index){
+		Debug.Log("Yay!");
+	}
 }
