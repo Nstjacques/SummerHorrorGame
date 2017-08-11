@@ -6,11 +6,9 @@ public class ItemAttribute : MonoBehaviour {
 	public float Weight;
 	public int Value;
 	public string itemName;
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
+	public GameObject prefab;
+
+	void Start(){
+		prefab = this.gameObject;
 	}
 }

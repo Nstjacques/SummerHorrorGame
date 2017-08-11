@@ -80,7 +80,7 @@ public class UI_Manager : MonoBehaviour {
 				
 				// Adds listener for deleting objects!
 				Button button = Item.GetComponent<Button>();
-				button.onClick.AddListener(delegate {InventoryManager.DropObject (reference);}); 
+				button.onClick.AddListener(delegate {InventoryManager.DropObject (reference);});
 				
 				// Populates the UI with all the important information
 				Transform stats_panel = Item.transform.GetChild(0);
