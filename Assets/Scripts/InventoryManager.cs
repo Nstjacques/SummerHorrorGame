@@ -30,16 +30,19 @@ public class InventoryManager : MonoBehaviour {
 		// Add the object to invetory list
 		// Takes name, weight, and value
 		listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value));
-		Debug.Log(listofObjects[0]);
-		// Change player attributes
+		// Change player attributes, make it's own function?
 		currentWeight -= itemAttribute.Weight;
 		score += itemAttribute.Value;
 		/* // Debug
 		Debug.Log (currentWeight);
-		Debug.Log (score); */
+		Debug.Log (score); 
+		Debug.Log(listofObjects.Count);*/
 	}
 
-	public void DropObject(int item_index){
+	public void DropObject(Item item){
 		Debug.Log("Yay!");
+		// This needs to be the last line of code!
+		listofObjects.Remove(item);
+		Debug.Log(listofObjects.Count);
 	}
 }

@@ -74,17 +74,19 @@ public class UI_Manager : MonoBehaviour {
 			passcode_status_panel.SetActive(true);
 			
 			for (int i = objectPanelsThatExist; i < InventoryManager.listofObjects.Count; i++){
+				Item reference = InventoryManager.listofObjects[i];
+				
 				GameObject Item = Instantiate(item_panel_prefab, inventory_panel.transform);
 				
 				// Adds listener for deleting objects!
 				Button button = Item.GetComponent<Button>();
-				button.onClick.AddListener(delegate {InventoryManager.DropObject (i);}); 
+				button.onClick.AddListener(delegate {InventoryManager.DropObject (reference);}); 
 				
 				// Populates the UI with all the important information
 				Transform stats_panel = Item.transform.GetChild(0);
-				stats_panel.GetChild(0).GetComponent<Text>().text = InventoryManager.listofObjects[i].Name;
-				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + InventoryManager.listofObjects[i].Value.ToString();
-				stats_panel.GetChild(2).GetComponent<Text>().text = value_str + InventoryManager.listofObjects[i].Weight.ToString();
+				stats_panel.GetChild(0).GetComponent<Text>().text = reference.Name;
+				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + reference.Value.ToString();
+				stats_panel.GetChild(2).GetComponent<Text>().text = value_str + reference.Weight.ToString();
 				
 				// This int tracks how many panels have been made, so it only creates new ones whenever you open the inventory!
 				objectPanelsThatExist++;
