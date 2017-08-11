@@ -147,6 +147,8 @@ MonoBehaviour:
   inventory_panel: {fileID: 0}
   item_panel_prefab: {fileID: 1238585278142542, guid: 463d3cfca43ad7547a27a43ff693b84d,
     type: 2}
+  passcode_status_panel: {fileID: 0}
+  Pause_Menu: {fileID: 0}
 --- !u!114 &114135767629067514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d808af96e4eed47a438ced39d3da7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   canClick: 0
   currentClick: {fileID: 0}
   passcode: 0

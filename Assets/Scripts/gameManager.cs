@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 			UI_Manager.Pause_Menu.SetActive(true);
 			DisablePlayerController(true);
 		}
-		if (isPaused == true){
+		else {
 			isPaused = false;
 			UI_Manager.Pause_Menu.SetActive(false);
 			DisablePlayerController(false);

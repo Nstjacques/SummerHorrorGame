@@ -44,10 +44,10 @@ public class UI_Manager : MonoBehaviour {
 	
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.I)){
-			Debug.Log("Inventory!");
+			// Debug.Log("Inventory!");
 			Inventory();
 		}
-		if (Input.GetKeyDown(KeyCode.P)){
+		if (Input.GetKeyDown(KeyCode.P) | Input.GetKeyDown(KeyCode.Escape)){
 			GameManager.Pause();
 		}
 	}
