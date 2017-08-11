@@ -35,13 +35,13 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Pause(){
-		Debug.Log(isPaused);
+		// Debug.Log(isPaused);
 		if (isPaused == false){
 			isPaused = true;
 			UI_Manager.Pause_Menu.SetActive(true);
 			DisablePlayerController(true);
 		}
-		if (isPaused == true){
+		else {
 			isPaused = false;
 			UI_Manager.Pause_Menu.SetActive(false);
 			DisablePlayerController(false);

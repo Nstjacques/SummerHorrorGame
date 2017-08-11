@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
-	
+	private GameManager GameManager;
+	private UI_Manager UI_Manager;
 	/* Public */
 	public int inventorySlots;
 	public float currentWeight;
@@ -16,6 +17,8 @@ public class InventoryManager : MonoBehaviour {
 	private ItemAttribute itemAttribute;
 	
 	void Start () {
+		GameManager = GameObject.Find("Managers/GameManager").GetComponent<GameManager>();
+		UI_Manager = GameObject.Find("Managers/UI_Manager").GetComponent<UI_Manager>();
 		BadItemPrisonLocation = BadItemPrison.transform.position;
 	}
 
@@ -23,23 +26,35 @@ public class InventoryManager : MonoBehaviour {
 		
 	}
 
+	void DebugStuff(){
+		Debug.Log (currentWeight);
+		Debug.Log (score); 
+		Debug.Log(listofObjects.Count);
+	}
+
 	public void AddObject(GameObject item) {
 		itemAttribute = item.GetComponent<ItemAttribute> ();
 		// Move the object to prison
 		item.transform.position = (BadItemPrisonLocation);
-		// Add the object to invetory list
-		// Takes name, weight, and value
-		listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value));
-		Debug.Log(listofObjects[0]);
-		// Change player attributes
+		/* Add the object to invetory list
+		Takes name, weight, and value */
+		listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value, itemAttribute.prefab));
+		// Change player attributes, make it's own function?
 		currentWeight -= itemAttribute.Weight;
 		score += itemAttribute.Value;
-		/* // Debug
-		Debug.Log (currentWeight);
-		Debug.Log (score); */
+		// DebugStuff();
 	}
 
-	public void DropObject(int item_index){
-		Debug.Log("Yay!");
+	public void DropObject(Item item, GameObject UI_thing){
+		// TODO: Update the player's stats
+
+		// This was me trying to instantiate, but it didn't work and that's ok!
+		/* Vector3 quick = GameManager.Player.transform.position;
+		Instantiate(item.prefab, quick, Quaternion.identity); */
+		item.prefab.transform.position = GameManager.Player.transform.position;
+
+		listofObjects.Remove(item);
+		Destroy(UI_thing);
+		UI_Manager.objectPanelsThatExist -=1;
 	}
 }
