@@ -27,7 +27,8 @@ public class UI_Manager : MonoBehaviour {
 	public GameObject item_panel_prefab;
 	public GameObject passcode_status_panel;
 	private bool isInventoryOpen;
-	private int objectPanelsThatExist;
+	[HideInInspector]
+	public int objectPanelsThatExist;
 
 	[Header("Pause Menu")]
 	public GameObject Pause_Menu;
@@ -80,7 +81,7 @@ public class UI_Manager : MonoBehaviour {
 				
 				// Adds listener for deleting objects!
 				Button button = Item.GetComponent<Button>();
-				button.onClick.AddListener(delegate {InventoryManager.DropObject (reference);});
+				button.onClick.AddListener(delegate {InventoryManager.DropObject (reference, Item);});
 				
 				// Populates the UI with all the important information
 				Transform stats_panel = Item.transform.GetChild(0);
