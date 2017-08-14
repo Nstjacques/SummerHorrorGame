@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour {
 	/* Managers */
 	private UI_Manager UI_Manager;
 
-	public GameObject Player;
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 	private ReticleRaycast ReticleRaycast;
 	
@@ -23,6 +22,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		UI_Manager = GameObject.Find("Managers/UI_Manager").GetComponent<UI_Manager>();
 		// 
+		GameObject Player = GameObject.Find("FPSController");
 		controller = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
 		ReticleRaycast = Player.GetComponent<ReticleRaycast>();
 		// 
