@@ -92,6 +92,10 @@ public class Patrol : MonoBehaviour {
 						destPoint = lastPoint;
 						GotoNextPoint ();
 					}
+				} 
+
+				if (hit.collider.gameObject.tag == "environment") {
+					return;
 				}
 			}
 		}
