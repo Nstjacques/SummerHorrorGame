@@ -182,6 +182,11 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 994070816}
+    - target: {fileID: 114042656024552764, guid: 8dd5784f89c96664387d67b69e643236,
+        type: 2}
+      propertyPath: Pause_Menu
+      value: 
+      objectReference: {fileID: 1088895670}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dd5784f89c96664387d67b69e643236, type: 2}
   m_IsPrefabParent: 0
@@ -784,6 +789,11 @@ GameObject:
 --- !u!224 &1086263165 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224449440079306014, guid: 71ddf88595bb6d649afc360967b1cff6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1949712370}
+--- !u!1 &1088895670 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1073477855729582, guid: 71ddf88595bb6d649afc360967b1cff6,
     type: 2}
   m_PrefabInternal: {fileID: 1949712370}
 --- !u!1 &1201432342
