@@ -148,6 +148,7 @@ MonoBehaviour:
   item_panel_prefab: {fileID: 1238585278142542, guid: 463d3cfca43ad7547a27a43ff693b84d,
     type: 2}
   passcode_status_panel: {fileID: 0}
+  objectPanelsThatExist: 0
   Pause_Menu: {fileID: 0}
 --- !u!114 &114135767629067514
 MonoBehaviour:

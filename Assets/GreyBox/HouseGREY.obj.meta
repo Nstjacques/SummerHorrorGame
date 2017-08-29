@@ -142,6 +142,33 @@ ModelImporter:
     4300048: TBD4_Floor2
     4300050: Windows_pasted__Window1
     4300052: Windows_Window
+    6400000: Attic_Floor3
+    6400002: DiningRoom_Floor1
+    6400004: Extensions_Chimney
+    6400006: Extensions_Door1
+    6400008: Extensions_pipe
+    6400010: Extensions_RoofExtension:RoadKillOut
+    6400012: Floor1_BasementEntr
+    6400014: Floor1_Hall
+    6400016: Floor1_Kitchen
+    6400018: Floor1_Lounge
+    6400020: Floor1_Pantry
+    6400022: Floor1_Study
+    6400024: Floor2_GuestRoom
+    6400026: Floor2_Hall2
+    6400028: Floor2_Library
+    6400030: Floor2_TBD1
+    6400032: Floor2_TBD3
+    6400034: Floor3_Observatory1
+    6400036: pasted__Window_Windows
+    6400038: pCube1_Porch
+    6400040: Roof_Roof1
+    6400042: Roof_Roof2
+    6400044: RoofExtension1:RoadKillOut_Extensions
+    6400046: SideRoof_Roof
+    6400048: TBD4_Floor2
+    6400050: Windows_pasted__Window1
+    6400052: Windows_Window
   materials:
     importMaterials: 1
     materialName: 0
@@ -171,7 +198,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
