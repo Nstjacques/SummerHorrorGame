@@ -79,7 +79,7 @@ public class Patrol : MonoBehaviour {
 
 			if (Physics.Raycast (transform.position, direction, out hit)) {
 				print ("sendingGoodVibes");
-				if (hit.collider.gameObject.tag != "environment" && hit.collider.gameObject.tag == "player") {
+				if (hit.collider.gameObject.tag == "player") {
 					print ("booming");
 
 					lastPoint = destPoint;
