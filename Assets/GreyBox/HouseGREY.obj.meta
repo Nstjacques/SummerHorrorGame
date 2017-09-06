@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 03b07d833ac1bb24188ceb84ca519f7a
-timeCreated: 1504025525
-licenseType: Pro
+guid: 1364c6cec208a4543af73a3b62ee11b8
+timeCreated: 1504648144
+licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
@@ -11,164 +11,188 @@ ModelImporter:
     100006: Extensions_Door1
     100008: Extensions_pipe
     100010: Extensions_RoofExtension:RoadKillOut
-    100012: Floor1_BasementEntr
+    100012: Floor1_Basement
     100014: Floor1_Hall
-    100016: Floor1_Kitchen
-    100018: Floor1_Lounge
-    100020: Floor1_Pantry
-    100022: Floor1_Study
-    100024: Floor2_GuestRoom
-    100026: Floor2_Hall2
-    100028: Floor2_Library
-    100030: Floor2_TBD1
-    100032: Floor2_TBD3
-    100034: Floor3_Observatory1
-    100036: //RootNode
-    100038: pasted__Window_Windows
-    100040: pCube1_Porch
-    100042: Roof_Roof1
-    100044: Roof_Roof2
-    100046: RoofExtension1:RoadKillOut_Extensions
-    100048: SideRoof_Roof
-    100050: TBD4_Floor2
-    100052: Windows_pasted__Window1
-    100054: Windows_Window
+    100016: Floor1_InvPlane3
+    100018: Floor1_Kitchen
+    100020: Floor1_Lounge
+    100022: Floor1_Pantry
+    100024: Floor1_Study
+    100026: Floor2_GuestRoom
+    100028: Floor2_Hall
+    100030: Floor2_InvPlane
+    100032: Floor2_InvPlane2
+    100034: Floor2_Library
+    100036: Floor2_TBD1
+    100038: Floor2_TBD3
+    100040: Floor3_Observatory1
+    100042: //RootNode
+    100044: pasted__Window_Windows
+    100046: pCube1_Porch
+    100048: Ref
+    100050: Roof_Roof1
+    100052: Roof_Roof2
+    100054: RoofExtension1:RoadKillOut_Extensions
+    100056: SideRoof_Roof
+    100058: TBD4_Floor2
+    100060: Windows_pasted__Window1
+    100062: Windows_Window
     400000: Attic_Floor3
     400002: DiningRoom_Floor1
     400004: Extensions_Chimney
     400006: Extensions_Door1
     400008: Extensions_pipe
     400010: Extensions_RoofExtension:RoadKillOut
-    400012: Floor1_BasementEntr
+    400012: Floor1_Basement
     400014: Floor1_Hall
-    400016: Floor1_Kitchen
-    400018: Floor1_Lounge
-    400020: Floor1_Pantry
-    400022: Floor1_Study
-    400024: Floor2_GuestRoom
-    400026: Floor2_Hall2
-    400028: Floor2_Library
-    400030: Floor2_TBD1
-    400032: Floor2_TBD3
-    400034: Floor3_Observatory1
-    400036: //RootNode
-    400038: pasted__Window_Windows
-    400040: pCube1_Porch
-    400042: Roof_Roof1
-    400044: Roof_Roof2
-    400046: RoofExtension1:RoadKillOut_Extensions
-    400048: SideRoof_Roof
-    400050: TBD4_Floor2
-    400052: Windows_pasted__Window1
-    400054: Windows_Window
+    400016: Floor1_InvPlane3
+    400018: Floor1_Kitchen
+    400020: Floor1_Lounge
+    400022: Floor1_Pantry
+    400024: Floor1_Study
+    400026: Floor2_GuestRoom
+    400028: Floor2_Hall
+    400030: Floor2_InvPlane
+    400032: Floor2_InvPlane2
+    400034: Floor2_Library
+    400036: Floor2_TBD1
+    400038: Floor2_TBD3
+    400040: Floor3_Observatory1
+    400042: //RootNode
+    400044: pasted__Window_Windows
+    400046: pCube1_Porch
+    400048: Ref
+    400050: Roof_Roof1
+    400052: Roof_Roof2
+    400054: RoofExtension1:RoadKillOut_Extensions
+    400056: SideRoof_Roof
+    400058: TBD4_Floor2
+    400060: Windows_pasted__Window1
+    400062: Windows_Window
     2300000: Attic_Floor3
     2300002: DiningRoom_Floor1
     2300004: Extensions_Chimney
     2300006: Extensions_Door1
     2300008: Extensions_pipe
     2300010: Extensions_RoofExtension:RoadKillOut
-    2300012: Floor1_BasementEntr
+    2300012: Floor1_Basement
     2300014: Floor1_Hall
-    2300016: Floor1_Kitchen
-    2300018: Floor1_Lounge
-    2300020: Floor1_Pantry
-    2300022: Floor1_Study
-    2300024: Floor2_GuestRoom
-    2300026: Floor2_Hall2
-    2300028: Floor2_Library
-    2300030: Floor2_TBD1
-    2300032: Floor2_TBD3
-    2300034: Floor3_Observatory1
-    2300036: pasted__Window_Windows
-    2300038: pCube1_Porch
-    2300040: Roof_Roof1
-    2300042: Roof_Roof2
-    2300044: RoofExtension1:RoadKillOut_Extensions
-    2300046: SideRoof_Roof
-    2300048: TBD4_Floor2
-    2300050: Windows_pasted__Window1
-    2300052: Windows_Window
+    2300016: Floor1_InvPlane3
+    2300018: Floor1_Kitchen
+    2300020: Floor1_Lounge
+    2300022: Floor1_Pantry
+    2300024: Floor1_Study
+    2300026: Floor2_GuestRoom
+    2300028: Floor2_Hall
+    2300030: Floor2_InvPlane
+    2300032: Floor2_InvPlane2
+    2300034: Floor2_Library
+    2300036: Floor2_TBD1
+    2300038: Floor2_TBD3
+    2300040: Floor3_Observatory1
+    2300042: pasted__Window_Windows
+    2300044: pCube1_Porch
+    2300046: Ref
+    2300048: Roof_Roof1
+    2300050: Roof_Roof2
+    2300052: RoofExtension1:RoadKillOut_Extensions
+    2300054: SideRoof_Roof
+    2300056: TBD4_Floor2
+    2300058: Windows_pasted__Window1
+    2300060: Windows_Window
     3300000: Attic_Floor3
     3300002: DiningRoom_Floor1
     3300004: Extensions_Chimney
     3300006: Extensions_Door1
     3300008: Extensions_pipe
     3300010: Extensions_RoofExtension:RoadKillOut
-    3300012: Floor1_BasementEntr
+    3300012: Floor1_Basement
     3300014: Floor1_Hall
-    3300016: Floor1_Kitchen
-    3300018: Floor1_Lounge
-    3300020: Floor1_Pantry
-    3300022: Floor1_Study
-    3300024: Floor2_GuestRoom
-    3300026: Floor2_Hall2
-    3300028: Floor2_Library
-    3300030: Floor2_TBD1
-    3300032: Floor2_TBD3
-    3300034: Floor3_Observatory1
-    3300036: pasted__Window_Windows
-    3300038: pCube1_Porch
-    3300040: Roof_Roof1
-    3300042: Roof_Roof2
-    3300044: RoofExtension1:RoadKillOut_Extensions
-    3300046: SideRoof_Roof
-    3300048: TBD4_Floor2
-    3300050: Windows_pasted__Window1
-    3300052: Windows_Window
+    3300016: Floor1_InvPlane3
+    3300018: Floor1_Kitchen
+    3300020: Floor1_Lounge
+    3300022: Floor1_Pantry
+    3300024: Floor1_Study
+    3300026: Floor2_GuestRoom
+    3300028: Floor2_Hall
+    3300030: Floor2_InvPlane
+    3300032: Floor2_InvPlane2
+    3300034: Floor2_Library
+    3300036: Floor2_TBD1
+    3300038: Floor2_TBD3
+    3300040: Floor3_Observatory1
+    3300042: pasted__Window_Windows
+    3300044: pCube1_Porch
+    3300046: Ref
+    3300048: Roof_Roof1
+    3300050: Roof_Roof2
+    3300052: RoofExtension1:RoadKillOut_Extensions
+    3300054: SideRoof_Roof
+    3300056: TBD4_Floor2
+    3300058: Windows_pasted__Window1
+    3300060: Windows_Window
     4300000: Attic_Floor3
     4300002: DiningRoom_Floor1
     4300004: Extensions_Chimney
     4300006: Extensions_Door1
     4300008: Extensions_pipe
     4300010: Extensions_RoofExtension:RoadKillOut
-    4300012: Floor1_BasementEntr
+    4300012: Floor1_Basement
     4300014: Floor1_Hall
-    4300016: Floor1_Kitchen
-    4300018: Floor1_Lounge
-    4300020: Floor1_Pantry
-    4300022: Floor1_Study
-    4300024: Floor2_GuestRoom
-    4300026: Floor2_Hall2
-    4300028: Floor2_Library
-    4300030: Floor2_TBD1
-    4300032: Floor2_TBD3
-    4300034: Floor3_Observatory1
-    4300036: pasted__Window_Windows
-    4300038: pCube1_Porch
-    4300040: Roof_Roof1
-    4300042: Roof_Roof2
-    4300044: RoofExtension1:RoadKillOut_Extensions
-    4300046: SideRoof_Roof
-    4300048: TBD4_Floor2
-    4300050: Windows_pasted__Window1
-    4300052: Windows_Window
+    4300016: Floor1_InvPlane3
+    4300018: Floor1_Kitchen
+    4300020: Floor1_Lounge
+    4300022: Floor1_Pantry
+    4300024: Floor1_Study
+    4300026: Floor2_GuestRoom
+    4300028: Floor2_Hall
+    4300030: Floor2_InvPlane
+    4300032: Floor2_InvPlane2
+    4300034: Floor2_Library
+    4300036: Floor2_TBD1
+    4300038: Floor2_TBD3
+    4300040: Floor3_Observatory1
+    4300042: pasted__Window_Windows
+    4300044: pCube1_Porch
+    4300046: Ref
+    4300048: Roof_Roof1
+    4300050: Roof_Roof2
+    4300052: RoofExtension1:RoadKillOut_Extensions
+    4300054: SideRoof_Roof
+    4300056: TBD4_Floor2
+    4300058: Windows_pasted__Window1
+    4300060: Windows_Window
     6400000: Attic_Floor3
     6400002: DiningRoom_Floor1
     6400004: Extensions_Chimney
     6400006: Extensions_Door1
     6400008: Extensions_pipe
     6400010: Extensions_RoofExtension:RoadKillOut
-    6400012: Floor1_BasementEntr
+    6400012: Floor1_Basement
     6400014: Floor1_Hall
-    6400016: Floor1_Kitchen
-    6400018: Floor1_Lounge
-    6400020: Floor1_Pantry
-    6400022: Floor1_Study
-    6400024: Floor2_GuestRoom
-    6400026: Floor2_Hall2
-    6400028: Floor2_Library
-    6400030: Floor2_TBD1
-    6400032: Floor2_TBD3
-    6400034: Floor3_Observatory1
-    6400036: pasted__Window_Windows
-    6400038: pCube1_Porch
-    6400040: Roof_Roof1
-    6400042: Roof_Roof2
-    6400044: RoofExtension1:RoadKillOut_Extensions
-    6400046: SideRoof_Roof
-    6400048: TBD4_Floor2
-    6400050: Windows_pasted__Window1
-    6400052: Windows_Window
+    6400016: Floor1_InvPlane3
+    6400018: Floor1_Kitchen
+    6400020: Floor1_Lounge
+    6400022: Floor1_Pantry
+    6400024: Floor1_Study
+    6400026: Floor2_GuestRoom
+    6400028: Floor2_Hall
+    6400030: Floor2_InvPlane
+    6400032: Floor2_InvPlane2
+    6400034: Floor2_Library
+    6400036: Floor2_TBD1
+    6400038: Floor2_TBD3
+    6400040: Floor3_Observatory1
+    6400042: pasted__Window_Windows
+    6400044: pCube1_Porch
+    6400046: Ref
+    6400048: Roof_Roof1
+    6400050: Roof_Roof2
+    6400052: RoofExtension1:RoadKillOut_Extensions
+    6400054: SideRoof_Roof
+    6400056: TBD4_Floor2
+    6400058: Windows_pasted__Window1
+    6400060: Windows_Window
   materials:
     importMaterials: 1
     materialName: 0
