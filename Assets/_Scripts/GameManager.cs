@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	/* Managers */
 	private UI_Manager UI_Manager;
-	public GameObject Player;
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 	private ReticleRaycast ReticleRaycast;
 
@@ -14,8 +13,9 @@ public class GameManager : MonoBehaviour {
 	public string[] clickable_tags;
 	
 	[Header("Player Data")]
+	public GameObject Player;
 	public bool canClick;
-	public GameObject currentClick;
+	// public GameObject currentClick;
 	
 	[Header("Game Data")]
 	public int passcode = 0;
@@ -28,10 +28,24 @@ public class GameManager : MonoBehaviour {
 		// 
 		controller = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
 		ReticleRaycast = Player.GetComponent<ReticleRaycast>();
-		// 
+		//
+		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
-	void Awake() {
+
+	public void DisablePlayerController(bool status){
+		if (status == true){
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
+			controller.enabled = false;
+			ReticleRaycast.enabled = false;
+		}
+		if (status == false){
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+			controller.enabled = true;
+			ReticleRaycast.enabled = true;
+		}
 	}
 
 	public void Pause(){
@@ -48,18 +62,16 @@ public class GameManager : MonoBehaviour {
 		}		
 	}
 
-	public void DisablePlayerController(bool status){
-		if (status == true){
-			controller.enabled = false;
-			ReticleRaycast.enabled = false;
-			Cursor.lockState = CursorLockMode.None;
-			Cursor.visible = true;
+	public void GameEndPrompt(bool Bool){
+		if (Bool == true){StartCoroutine(GameEnd());}
+		else{
+			UI_Manager.EndGamePrompt.SetActive(false);
+			DisablePlayerController(false);
 		}
-		if (status == false){
-			controller.enabled = true;
-			ReticleRaycast.enabled = true;
-			Cursor.visible = false;
-			Cursor.lockState = CursorLockMode.Locked;
-		}
+	}
+	private IEnumerator GameEnd(){
+		Debug.Log("The game is over!");
+		UI_Manager.BlackScreenManager(true);
+		yield return null;
 	}
 }

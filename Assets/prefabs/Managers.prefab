@@ -140,16 +140,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceebd9f1466c94b4d913b0843b443216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlackScreen: {fileID: 0}
   AspectRatio: {fileID: 0}
   Verb_Obj: {fileID: 0}
   Verb_Text: {fileID: 0}
-  panel: {fileID: 0}
-  text: {fileID: 0}
   inventory_panel: {fileID: 0}
   item_panel_prefab: {fileID: 1238585278142542, guid: 463d3cfca43ad7547a27a43ff693b84d,
     type: 2}
   passcode_status_panel: {fileID: 0}
   objectPanelsThatExist: 0
+  panel: {fileID: 0}
+  text: {fileID: 0}
+  EndGamePrompt: {fileID: 0}
   Pause_Menu: {fileID: 0}
   ui_fade_timer: 50
   ui_display_time: 3
@@ -164,13 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d808af96e4eed47a438ced39d3da7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   clickable_tags:
   - inventoryItem
   - safe
   - Door
+  - FinalDoor
+  Player: {fileID: 0}
   canClick: 0
-  currentClick: {fileID: 0}
   passcode: 0
 --- !u!114 &114854815234219048
 MonoBehaviour:

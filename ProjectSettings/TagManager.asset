@@ -9,6 +9,7 @@ TagManager:
   - player
   - environment
   - Door
+  - FinalDoor
   layers:
   - Default
   - TransparentFX

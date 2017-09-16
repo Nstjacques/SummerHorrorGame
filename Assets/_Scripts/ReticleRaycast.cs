@@ -67,6 +67,10 @@ public class ReticleRaycast : MonoBehaviour {
 					case "Door":
 						hit.collider.gameObject.SendMessage("Open");
 						break;
+					case "FinalDoor":
+						UI_Manager.EndGamePrompt.SetActive(true);
+						GameManager.DisablePlayerController(true);
+						break;
 				}
 			}
 		}
@@ -77,7 +81,7 @@ public class ReticleRaycast : MonoBehaviour {
 		}
 	}
 
-	// TODO: Move this method to the gamemanager?
+	// TODO: Move this method to the inventory manager?
 	private void changeSpeed(float newSpeed){
 		controller.m_WalkSpeed -= newSpeed;
 	}	

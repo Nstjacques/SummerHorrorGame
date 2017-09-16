@@ -10,14 +10,11 @@ public class UI_Manager : MonoBehaviour {
 	private InventoryManager InventoryManager;
 
 	[Header("HUD")]
+	public Image BlackScreen;
 	public Image AspectRatio;
 	public GameObject Verb_Obj;
 	[HideInInspector]
 	public Text Verb_Text;
-	
-	[Header("Message")]
-	public GameObject panel;
-	public Text text;
 
 	[Header("Inventory")]
 	public GameObject inventory_panel;
@@ -26,6 +23,13 @@ public class UI_Manager : MonoBehaviour {
 	private bool isInventoryOpen;
 	[HideInInspector]
 	public int objectPanelsThatExist;
+	
+	[Header("Message")]
+	public GameObject panel;
+	public Text text;
+
+	[Header("End of Game Prompt")]
+	public GameObject EndGamePrompt;
 
 	[Header("Pause Menu")]
 	public GameObject Pause_Menu;
@@ -48,7 +52,7 @@ public class UI_Manager : MonoBehaviour {
 		InventoryManager = GameObject.Find("Managers/InventoryManager").GetComponent<InventoryManager>();
 
 		Verb_Text = Verb_Obj.GetComponent<Text>();
-
+		Verb_Text.text = "";
 		objectPanelsThatExist = 0;
 	}
 	
@@ -63,7 +67,7 @@ public class UI_Manager : MonoBehaviour {
 	}
 
 	public void HUD (string message){
-		switch  (message){
+		switch (message){
 			case "inventoryItem":
 				Verb_Text.text = "Take";
 				break;
@@ -71,6 +75,9 @@ public class UI_Manager : MonoBehaviour {
 				Verb_Text.text = "Open";
 				break;
 			case "Door":
+				Verb_Text.text = "Open";
+				break;
+			case "FinalDoor":
 				Verb_Text.text = "Open";
 				break;
 		}
@@ -81,9 +88,9 @@ public class UI_Manager : MonoBehaviour {
 		text.text = message;
 		Image img = panel.GetComponent<Image>();
 		panel.SetActive(true);
-		img.CrossFadeAlpha(255, ui_fade_timer, true);
+		img.CrossFadeAlpha(255, ui_fade_timer, false);
 		yield return new WaitForSeconds (ui_display_time);
-		img.CrossFadeAlpha(0f, ui_fade_timer, true);
+		img.CrossFadeAlpha(0f, ui_fade_timer, false);
 		panel.SetActive (false);
 	}
 
