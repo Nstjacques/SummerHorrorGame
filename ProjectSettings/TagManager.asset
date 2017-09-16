@@ -8,6 +8,7 @@ TagManager:
   - safe
   - player
   - environment
+  - Door
   layers:
   - Default
   - TransparentFX

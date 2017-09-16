@@ -13,7 +13,7 @@ public class ReticleRaycast : MonoBehaviour {
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 
 	[Header("Raycast Reach")]
-	// Use this variable to change for away from them a player can reach!
+	// Use this variable to change how far away from them a player can reach!
 	public float raycastReach = 3;
 
 	/* Private */
@@ -36,7 +36,7 @@ public class ReticleRaycast : MonoBehaviour {
 			
 			/* If the object it hits is an object that can be picked up or the safe,
 			Let the player click on it, and create the aspect ratio effect */
-			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe"){
+			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe" || hit.collider.gameObject.tag == "Door"){
 				// TODO: Fade this aspect ratio effect, maybe by lerping?
 				UI_Manager.AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
 				GameManager.canClick = true;
@@ -63,6 +63,9 @@ public class ReticleRaycast : MonoBehaviour {
 						GameManager.passcode += 1;
 						// change to "set active"?
 						Destroy(hit.collider.gameObject);
+						break;
+					case "Door":
+						hit.collider.gameObject.SendMessage("Open");
 						break;
 				}
 			}

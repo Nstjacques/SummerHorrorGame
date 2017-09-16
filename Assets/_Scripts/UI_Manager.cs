@@ -70,6 +70,9 @@ public class UI_Manager : MonoBehaviour {
 			case "safe":
 				Verb_Text.text = "Open";
 				break;
+			case "Door":
+				Verb_Text.text = "Open";
+				break;
 		}
 		Verb_Obj.SetActive(true);
 	}

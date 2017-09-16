@@ -61,6 +61,7 @@ public class Door : MonoBehaviour
 		//Create a hinge.
 		hinge = new GameObject();
 		hinge.name = "hinge";
+		hinge.tag = "Door";
 
 		//Calculate sine/cosine of initial angle (needed for hinge positioning).
 		float CosDeg = Mathf.Cos ((transform.eulerAngles.y * Mathf.PI) / 180);
@@ -69,7 +70,7 @@ public class Door : MonoBehaviour
 		//Read transform (position/rotation/scale) of the door.
 		float PosDoorX = transform.position.x;
 		float PosDoorY = transform.position.y;
-	  float PosDoorZ = transform.position.z;
+	  	float PosDoorZ = transform.position.z;
 
 		float RotDoorX = transform.localEulerAngles.x;
 		float RotDoorZ = transform.localEulerAngles.z;
