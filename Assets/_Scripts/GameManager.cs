@@ -30,9 +30,6 @@ public class GameManager : MonoBehaviour {
 	}
 	void Awake() {
 	}
-	void Update () {
-	
-	}
 
 	public void Pause(){
 		// Debug.Log(isPaused);

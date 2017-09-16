@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour {
 	public float currentWeight;
 	public int score;
 	public List<Item> listofObjects = new List<Item>();
-	public GameObject BadItemPrison;
+	// public GameObject BadItemPrison;
 	
 	/* Private */
 	private Vector3 BadItemPrisonLocation;
@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour {
 	void Start () {
 		GameManager = GameObject.Find("Managers/GameManager").GetComponent<GameManager>();
 		UI_Manager = GameObject.Find("Managers/UI_Manager").GetComponent<UI_Manager>();
-		BadItemPrisonLocation = BadItemPrison.transform.position;
+		// BadItemPrisonLocation = BadItemPrison.transform.position;
 	}
 
 	void Update () {
@@ -48,9 +48,6 @@ public class InventoryManager : MonoBehaviour {
 	public void DropObject(Item item, GameObject UI_thing){
 		// TODO: Update the player's stats
 
-		// This was me trying to instantiate, but it didn't work and that's ok!
-		/* Vector3 quick = GameManager.Player.transform.position;
-		Instantiate(item.prefab, quick, Quaternion.identity); */
 		item.prefab.transform.position = GameManager.Player.transform.position;
 
 		listofObjects.Remove(item);

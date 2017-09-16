@@ -110,6 +110,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  playerObject: {fileID: 0}
 --- !u!195 &195130883321591774
 NavMeshAgent:
   m_ObjectHideFlags: 1

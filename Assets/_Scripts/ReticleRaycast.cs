@@ -31,7 +31,7 @@ public class ReticleRaycast : MonoBehaviour {
 		RaycastHit hit = new RaycastHit();
 
 		// If the raycast hits an object
-		if (Physics.Raycast(transform.position, transform.forward, out hit)){
+		if (Physics.Raycast(transform.position, transform.forward, out hit, 2)){
 			
 			/* If the object it hits is an object that can be picked up or the safe,
 			Let the player click on it, and create the aspect ratio effect */
