@@ -16,9 +16,6 @@ public class ReticleRaycast : MonoBehaviour {
 	// Use this variable to change for away from them a player can reach!
 	public float raycastReach = 3;
 
-	[Header("Aspect Ratio Image")]
-	public Image AspectRatio;
-
 	/* Private */
 	private Ray theRay;
 
@@ -41,9 +38,9 @@ public class ReticleRaycast : MonoBehaviour {
 			Let the player click on it, and create the aspect ratio effect */
 			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe"){
 				// TODO: Fade this aspect ratio effect, maybe by lerping?
-				AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
+				UI_Manager.AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
 				GameManager.canClick = true;
-				// Debug.Log ("Spooky");
+				UI_Manager.HUD(hit.collider.gameObject.tag);
 			}
 
 			if (Input.GetMouseButtonDown (0) && GameManager.canClick == true){
@@ -51,6 +48,7 @@ public class ReticleRaycast : MonoBehaviour {
 					case "inventoryItem":
 						// GameManager.currentClick = hit.transform.gameObject;
 						InventoryManager.AddObject (hit.collider.gameObject);
+						// TODO: Move this to Inventory Manager
 						changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
 						break;
 					case "safe":
@@ -70,7 +68,8 @@ public class ReticleRaycast : MonoBehaviour {
 			}
 		}
 		else {
-			AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
+			UI_Manager.Verb_Obj.SetActive(false);
+			UI_Manager.AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
 			GameManager.canClick = false;
 		}
 	}
