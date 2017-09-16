@@ -36,7 +36,7 @@ public class ReticleRaycast : MonoBehaviour {
 			
 			/* If the object it hits is an object that can be picked up or the safe,
 			Let the player click on it, and create the aspect ratio effect */
-			if (hit.collider.gameObject.tag == "inventoryItem" || hit.collider.gameObject.tag == "safe" || hit.collider.gameObject.tag == "Door"){
+			if (Array.Exists(GameManager.clickable_tags, element => element == hit.collider.gameObject.tag)){
 				// TODO: Fade this aspect ratio effect, maybe by lerping?
 				UI_Manager.AspectRatio.rectTransform.localScale = new Vector3(1,1.15f,1);
 				GameManager.canClick = true;

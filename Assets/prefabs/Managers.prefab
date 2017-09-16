@@ -140,8 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceebd9f1466c94b4d913b0843b443216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui_fade_timer: 50
-  ui_display_time: 3
+  AspectRatio: {fileID: 0}
+  Verb_Obj: {fileID: 0}
+  Verb_Text: {fileID: 0}
   panel: {fileID: 0}
   text: {fileID: 0}
   inventory_panel: {fileID: 0}
@@ -150,6 +151,8 @@ MonoBehaviour:
   passcode_status_panel: {fileID: 0}
   objectPanelsThatExist: 0
   Pause_Menu: {fileID: 0}
+  ui_fade_timer: 50
+  ui_display_time: 3
 --- !u!114 &114135767629067514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  clickable_tags:
+  - inventoryItem
+  - safe
+  - Door
   canClick: 0
   currentClick: {fileID: 0}
   passcode: 0

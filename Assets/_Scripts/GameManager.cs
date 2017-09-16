@@ -5,10 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	/* Managers */
 	private UI_Manager UI_Manager;
-
 	public GameObject Player;
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 	private ReticleRaycast ReticleRaycast;
+
+	[Header("Clickable Tags")]
+	[Tooltip("The tags of objects that can clicked - type EXACTLY")]
+	public string[] clickable_tags;
 	
 	[Header("Player Data")]
 	public bool canClick;
