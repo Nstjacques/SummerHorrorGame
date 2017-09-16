@@ -10,10 +10,14 @@ public class ReticleRaycast : MonoBehaviour {
 	private GameManager GameManager;
 	private UI_Manager UI_Manager;
 	private InventoryManager InventoryManager;
-
-	[Header("The aspect ratio image")]
-	public Image AspectRatio;
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
+
+	[Header("Raycast Reach")]
+	// Use this variable to change for away from them a player can reach!
+	public float raycastReach = 3;
+
+	[Header("Aspect Ratio Image")]
+	public Image AspectRatio;
 
 	/* Private */
 	private Ray theRay;
@@ -31,7 +35,7 @@ public class ReticleRaycast : MonoBehaviour {
 		RaycastHit hit = new RaycastHit();
 
 		// If the raycast hits an object
-		if (Physics.Raycast(transform.position, transform.forward, out hit, 2)){
+		if (Physics.Raycast(transform.position, transform.forward, out hit, raycastReach)){
 			
 			/* If the object it hits is an object that can be picked up or the safe,
 			Let the player click on it, and create the aspect ratio effect */
@@ -42,28 +46,28 @@ public class ReticleRaycast : MonoBehaviour {
 				// Debug.Log ("Spooky");
 			}
 
-				/* If the player clicks an object that can be picked up, add it to the inventory */
-				if (Input.GetMouseButtonDown (0) && GameManager.canClick == true && hit.collider.gameObject.tag == "inventoryItem") {
-					// GameManager.currentClick = hit.transform.gameObject;
-					InventoryManager.AddObject (hit.collider.gameObject);
-					changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
+			if (Input.GetMouseButtonDown (0) && GameManager.canClick == true){
+				switch (hit.collider.gameObject.tag){
+					case "inventoryItem":
+						// GameManager.currentClick = hit.transform.gameObject;
+						InventoryManager.AddObject (hit.collider.gameObject);
+						changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
+						break;
+					case "safe":
+						if (GameManager.passcode == 4) {
+							Debug.Log ("Bingo");
+							// TODO: open the safe
+						} else {
+							StartCoroutine(UI_Manager.Message ("I don't have the entire combination..."));
+						}
+						break;
+					case "passcode":
+						GameManager.passcode += 1;
+						// change to "set active"?
+						Destroy(hit.collider.gameObject);
+						break;
 				}
-
-				/* If the player clicks the safe, check if the player has all 4 pieces of the combination */
-				if (Input.GetMouseButtonDown (0) && GameManager.canClick == true && hit.collider.gameObject.tag == "safe") {
-					if (GameManager.passcode == 4) {
-						Debug.Log ("Bingo");
-					} else {
-						StartCoroutine(UI_Manager.Message ("I don't have the entire combination..."));
-					}
-				}
-
-				/* If the player clicks an object tagged "passcode", destroy that object,
-				and the player now has part of the passcode! */
-				if (Input.GetMouseButtonDown (0) && GameManager.canClick == true && hit.collider.gameObject.tag == "passcode") {
-					GameManager.passcode += 1;
-					Destroy(hit.collider.gameObject);
-				}
+			}
 		}
 		else {
 			AspectRatio.rectTransform.localScale = new Vector3(1,1.35f,1);
