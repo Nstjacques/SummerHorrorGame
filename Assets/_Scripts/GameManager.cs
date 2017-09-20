@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
 	}
 	private IEnumerator GameEnd(){
 		Debug.Log("The game is over!");
-		UI_Manager.BlackScreenManager(true);
+		// UI_Manager.BlackScreenManager(true);
 		yield return null;
 	}
 }

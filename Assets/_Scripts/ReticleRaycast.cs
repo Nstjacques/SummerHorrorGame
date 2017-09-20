@@ -43,7 +43,7 @@ public class ReticleRaycast : MonoBehaviour {
 				UI_Manager.HUD(hit.collider.gameObject.tag);
 			}
 
-			if (Input.GetMouseButtonDown (0) && GameManager.canClick == true){
+			if (Input.GetButtonDown("Fire1") && GameManager.canClick == true){
 				switch (hit.collider.gameObject.tag){
 					case "inventoryItem":
 						// GameManager.currentClick = hit.transform.gameObject;
