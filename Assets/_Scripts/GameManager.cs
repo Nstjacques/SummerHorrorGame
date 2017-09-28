@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour {
 	// public GameObject currentClick;
 	
 	[Header("Game Data")]
-	public int passcode = 0;
+	// How many cursed items does the player have
+	public int cursedItemCount = 0;
+	// How many pieces of the passcode does the player have
+	public int passcodeCount = 0;
 
 	/* Private */
 	private bool isPaused = false;
@@ -71,7 +74,10 @@ public class GameManager : MonoBehaviour {
 	}
 	private IEnumerator GameEnd(){
 		Debug.Log("The game is over!");
-		// UI_Manager.BlackScreenManager(true);
+		/* 
+		Fade the screen to black, play a music cue
+		
+		*/
 		yield return null;
 	}
 }

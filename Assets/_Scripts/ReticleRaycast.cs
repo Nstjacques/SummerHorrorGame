@@ -52,7 +52,7 @@ public class ReticleRaycast : MonoBehaviour {
 						changeSpeed(hit.collider.gameObject.GetComponent<ItemAttribute>().Weight);
 						break;
 					case "safe":
-						if (GameManager.passcode == 4) {
+						if (GameManager.passcodeCount == 4) {
 							Debug.Log ("Bingo");
 							// TODO: open the safe
 						} else {
@@ -60,7 +60,7 @@ public class ReticleRaycast : MonoBehaviour {
 						}
 						break;
 					case "passcode":
-						GameManager.passcode += 1;
+						GameManager.passcodeCount += 1;
 						// change to "set active"?
 						Destroy(hit.collider.gameObject);
 						break;
