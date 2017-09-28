@@ -76,7 +76,8 @@ public class GameManager : MonoBehaviour {
 		Debug.Log("The game is over!");
 		/* 
 		Fade the screen to black, play a music cue
-		
+		Fade up a new canvas element that contains a whole lot of stuff, including
+		time, score, how many cursed items, was the "Elixir of Life" found
 		*/
 		yield return null;
 	}

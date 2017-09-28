@@ -173,7 +173,8 @@ MonoBehaviour:
   - FinalDoor
   Player: {fileID: 0}
   canClick: 0
-  passcode: 0
+  cursedItemCount: 0
+  passcodeCount: 0
 --- !u!114 &114854815234219048
 MonoBehaviour:
   m_ObjectHideFlags: 1
