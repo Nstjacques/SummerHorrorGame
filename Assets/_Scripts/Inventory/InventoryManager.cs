@@ -7,8 +7,6 @@ public class InventoryManager : MonoBehaviour {
 	private UI_Manager UI_Manager;
 	/* Public */
 	public int inventorySlots;
-	public float currentWeight;
-	public int score;
 	public List<Item> listofObjects = new List<Item>();
 	public GameObject BadItemPrison;
 	
@@ -22,27 +20,25 @@ public class InventoryManager : MonoBehaviour {
 		BadItemPrisonLocation = BadItemPrison.transform.position;
 	}
 
-	void Update () {
-		
-	}
-
 	void DebugStuff(){
-		Debug.Log (currentWeight);
-		Debug.Log (score); 
+		Debug.Log (GameManager.currentWeight);
+		Debug.Log (GameManager.score); 
 		Debug.Log (listofObjects.Count);
 	}
 
 	public void AddObject(GameObject item) {
-		itemAttribute = item.GetComponent<ItemAttribute> ();
-		// Move the object to prison
-		item.transform.position = (BadItemPrisonLocation);
-		/* Add the object to inventory list
-		Takes name, weight, and value */
-		listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value, itemAttribute.prefab));
-		// Change player attributes, make it's own function?
-		currentWeight -= itemAttribute.Weight;
-		score += itemAttribute.Value;
-		// DebugStuff();
+		if (GameManager.currentWeight <= GameManager.maximumWeight && inventorySlots != 0){
+			itemAttribute = item.GetComponent<ItemAttribute> ();
+			// Move the object to prison
+			item.transform.position = (BadItemPrisonLocation);
+			/* Add the object to inventory list
+			Takes name, weight, and value */
+			listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value, itemAttribute.prefab));
+			// Change player attributes, make it's own function?
+			inventorySlots -= 1;
+			GameManager.currentWeight += itemAttribute.Weight;
+			GameManager.score += itemAttribute.Value;
+		}
 	}
 
 	public void DropObject(Item item, GameObject UI_thing){
