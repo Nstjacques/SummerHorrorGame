@@ -88,7 +88,7 @@ public class Patrol : MonoBehaviour {
 
 					agent.destination = playerTransform;
 
-					if (playerInRange = false) {
+					if (playerInRange == false) {
 						destPoint = lastPoint;
 						GotoNextPoint ();
 					}

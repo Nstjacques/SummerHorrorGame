@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour {
 		Fade up a new canvas element that contains a whole lot of stuff, including
 		time, score, how many cursed items, was the "Elixir of Life" found
 		*/
+		UI_Manager.EndGameMenu.SetActive(true);
+		DisablePlayerController(true);
 		yield return null;
 	}
 }

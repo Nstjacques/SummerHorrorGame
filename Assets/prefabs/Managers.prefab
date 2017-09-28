@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceebd9f1466c94b4d913b0843b443216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_fade_timer: 50
+  ui_display_time: 3
   BlackScreen: {fileID: 0}
   AspectRatio: {fileID: 0}
   Verb_Obj: {fileID: 0}
@@ -152,9 +154,8 @@ MonoBehaviour:
   panel: {fileID: 0}
   text: {fileID: 0}
   EndGamePrompt: {fileID: 0}
+  EndGameMenu: {fileID: 0}
   Pause_Menu: {fileID: 0}
-  ui_fade_timer: 50
-  ui_display_time: 3
 --- !u!114 &114135767629067514
 MonoBehaviour:
   m_ObjectHideFlags: 1
