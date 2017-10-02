@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour {
 	[Header("Player Data")]
 	public GameObject Player;
 	public bool canClick;
+	public float maximumWeight;
+	public float currentWeight;
+	public int score;
 	// public GameObject currentClick;
 	
 	[Header("Game Data")]
@@ -75,9 +78,12 @@ public class GameManager : MonoBehaviour {
 	private IEnumerator GameEnd(){
 		Debug.Log("The game is over!");
 		/* 
-		Fade the screen to black, play a music cue
-		
+		TODO: Fade the screen to black, play a music cue
+		Fade up a new canvas element that contains a whole lot of stuff, including
+		time, score, how many cursed items, was the "Elixir of Life" found
 		*/
+		UI_Manager.EndGameMenu.SetActive(true);
+		DisablePlayerController(true);
 		yield return null;
 	}
 }

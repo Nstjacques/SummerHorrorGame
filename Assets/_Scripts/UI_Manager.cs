@@ -9,6 +9,15 @@ public class UI_Manager : MonoBehaviour {
 	private GameManager GameManager;
 	private InventoryManager InventoryManager;
 
+	[Header("UI Fade Time")]
+	[SerializeField]
+	// I really don't get why this has to be so large, but now it looks okay!
+	private float ui_fade_timer = 50f;
+
+	[Header("UI Display Time")]
+	[SerializeField]
+	private float ui_display_time = 4f;
+
 	[Header("HUD")]
 	public Image BlackScreen;
 	public Image AspectRatio;
@@ -31,17 +40,11 @@ public class UI_Manager : MonoBehaviour {
 	[Header("End of Game Prompt")]
 	public GameObject EndGamePrompt;
 
+	[Header("End of Game Menu")]
+	public GameObject EndGameMenu;
+
 	[Header("Pause Menu")]
 	public GameObject Pause_Menu;
-
-	[Header("UI Fade Time")]
-	[SerializeField]
-	// I really don't get why this has to be so large, but now it looks okay!
-	private float ui_fade_timer = 50f;
-
-	[Header("UI Display Time")]
-	[SerializeField]
-	private float ui_display_time = 4f;
 	
 	/* Private */
 	private string weight_str = "Weight: ";

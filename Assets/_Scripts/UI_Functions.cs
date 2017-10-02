@@ -25,7 +25,7 @@ public class UI_Functions : MonoBehaviour {
 	}
 	public void ExittoMain(){
 		// Loads Main Menu
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene("MainMenu");
 	}
 
 	/* Both */
