@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour {
 	private GameManager GameManager;
 	private UI_Manager UI_Manager;
 	/* Public */
-	public int inventorySlots;
+	public int inventorySlots = 9;
 	public List<Item> listofObjects = new List<Item>();
 	public GameObject BadItemPrison;
 	
