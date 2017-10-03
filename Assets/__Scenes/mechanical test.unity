@@ -202,6 +202,16 @@ Prefab:
       propertyPath: Pause_Menu
       value: 
       objectReference: {fileID: 1088895670}
+    - target: {fileID: 114854815234219048, guid: 8dd5784f89c96664387d67b69e643236,
+        type: 2}
+      propertyPath: inventorySlots
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114135767629067514, guid: 8dd5784f89c96664387d67b69e643236,
+        type: 2}
+      propertyPath: maximumWeight
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8dd5784f89c96664387d67b69e643236, type: 2}
   m_IsPrefabParent: 0
