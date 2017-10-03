@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour {
 	private GameManager GameManager;
 	private UI_Manager UI_Manager;
 	/* Public */
-	public int inventorySlots = 9;
+	// public int inventorySlots = 9;
 	public List<Item> listofObjects = new List<Item>();
 	public GameObject BadItemPrison;
 	
@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	public void AddObject(GameObject item) {
-		if (GameManager.currentWeight <= GameManager.maximumWeight && inventorySlots != 0){
+		if (GameManager.currentWeight <= GameManager.maximumWeight /* && inventorySlots != 0 */){
 			itemAttribute = item.GetComponent<ItemAttribute> ();
 			// Move the object to prison
 			item.transform.position = (BadItemPrisonLocation);
@@ -35,7 +35,7 @@ public class InventoryManager : MonoBehaviour {
 			Takes name, weight, and value */
 			listofObjects.Add(new Item (itemAttribute.itemName, itemAttribute.Weight, itemAttribute.Value, itemAttribute.prefab));
 			// Change player attributes, make it's own function?
-			inventorySlots -= 1;
+			/* inventorySlots -= 1; */
 			GameManager.currentWeight += itemAttribute.Weight;
 			GameManager.score += itemAttribute.Value;
 		}

@@ -94,7 +94,7 @@ public class Patrol : MonoBehaviour {
 					}
 				} 
 
-				if (hit.collider.gameObject.tag == "environment") {
+				if (hit.collider.gameObject.tag == "environment" || hit.collider.gameObject.tag == "door") {
 					return;
 				}
 			}

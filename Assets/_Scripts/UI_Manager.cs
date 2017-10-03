@@ -98,7 +98,7 @@ public class UI_Manager : MonoBehaviour {
 	}
 
 	public void Inventory(){
-		/* TODO: Instantiate the item panels as giant buttons, 
+		/* Instantiate the item panels as giant buttons, 
 		so they can be programmed to delete the object it represents and spawn it*/
 		if (isInventoryOpen == false){
 			isInventoryOpen = true;

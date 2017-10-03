@@ -12,14 +12,16 @@ public class GameManager : MonoBehaviour {
 	[Tooltip("The tags of objects that can clicked - type EXACTLY")]
 	public string[] clickable_tags;
 	
+	// Anything affects current gameplay
 	[Header("Player Data")]
 	public GameObject Player;
 	public bool canClick;
+	// public GameObject currentClick;
 	public float maximumWeight;
 	public float currentWeight;
 	public int score;
-	// public GameObject currentClick;
 	
+	// Anything that affects win conditions
 	[Header("Game Data")]
 	// How many cursed items does the player have
 	public int cursedItemCount = 0;
