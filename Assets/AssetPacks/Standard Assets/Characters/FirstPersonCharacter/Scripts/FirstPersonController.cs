@@ -11,7 +11,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
+		[SerializeField] private bool m_IsCrouching;
         public float m_WalkSpeed;
+		public float m_CrouchSpeed;
+		public float m_CurrentSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
@@ -29,6 +32,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
         private Camera m_Camera;
+		public GameObject m_CameraHolder;
         private bool m_Jump;
         private float m_YRotation;
         private Vector2 m_Input;
@@ -41,6 +45,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
+		//Moving Camera During Crouching
+		private Vector3 m_WalkPos;
+		private Vector3 m_CrouchPos;
+		private Vector3 m_CurrentPos;
+		public float t;
+		public float m_CrouchTime = 0.25f;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +66,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+			//Crouching
+			m_IsCrouching = false;
+			m_CurrentSpeed = m_WalkSpeed;
+			m_CrouchSpeed = (m_WalkSpeed * 0.5f);
+			m_WalkPos = new Vector3 (0, 0, 0);
+			m_CrouchPos = new Vector3 (0, -0.5f, 0);
+			//m_CurrentPos = m_WalkPos = transform.localPosition;
         }
 
 
@@ -81,6 +100,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
         }
 
 
@@ -131,6 +151,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+
+			//Crouching
+			if (CrossPlatformInputManager.GetAxis ("Crouch") > 0) {
+				Crouch ();
+			} else {
+				m_IsCrouching = false;
+			}
+			switch( m_IsCrouching ) {
+			case true:
+				m_CurrentSpeed = m_CrouchSpeed;
+				m_CameraHolder.transform.localPosition = m_CrouchPos;
+				break;
+			case false:
+				m_CurrentSpeed = m_WalkSpeed;
+				m_CameraHolder.transform.localPosition = m_WalkPos;
+				break;
+			}
         }
 
 
@@ -215,7 +252,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            speed = m_IsWalking ? m_CurrentSpeed : m_RunSpeed;
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -232,6 +269,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
             }
         }
+		private void Crouch () {
+			m_IsCrouching = true;
+
+
+			//t += Time.deltaTime / m_CrouchTime;
+			//m_CameraHolder.transform.localPosition =  Vector3.Lerp (m_WalkPos, m_CrouchPos, t);
+		}
 
 
         private void RotateView()

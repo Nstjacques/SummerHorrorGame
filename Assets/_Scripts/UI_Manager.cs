@@ -135,4 +135,12 @@ public class UI_Manager : MonoBehaviour {
 			GameManager.DisablePlayerController(false);
 		}
 	}
+	// End Game UI
+	/* ROUND TIME STRING
+	 * public float finalGameTime = GameManager.playTime;
+	 * 	Set once player decides to leave
+	 * string Minutes = Mathf.Floor(finalGameTime / 60).ToString("00");
+	 * string Seconds = Mathf.Floor(finalGameTime % 60)ToString("00");
+	 * End_Game.GetChild(0).GetChild(1).GetComponent<Text>().text = "This Round lasted: " + Minutes + ":" + Seconds;
+	 * */
 }
