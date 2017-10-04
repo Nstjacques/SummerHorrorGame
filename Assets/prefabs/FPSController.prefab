@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 20233960363011034}
   - component: {fileID: 81266151971893084}
   - component: {fileID: 124956449382807966}
+  - component: {fileID: 114102354657880212}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -298,6 +299,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114102354657880212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757704956590470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c592a14ef9f97448505d7c0890e5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTexture: {fileID: 2800000, guid: 8b9e5f47184cc924ea9b7e11c79bfe17, type: 3}
+  fadeSpeed: 0.5
+  alpha: 1
 --- !u!114 &114443001181466322
 MonoBehaviour:
   m_ObjectHideFlags: 1

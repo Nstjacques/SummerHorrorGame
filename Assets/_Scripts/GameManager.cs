@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 	private UI_Manager UI_Manager;
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController controller;
 	private ReticleRaycast ReticleRaycast;
-	private FadingInOut FadingInOut;
+	private FadingInOut Fading;
 
 	[Header("Clickable Tags")]
 	[Tooltip("The tags of objects that can clicked - type EXACTLY")]
@@ -35,12 +35,13 @@ public class GameManager : MonoBehaviour {
 
 	void Start () {
 		UI_Manager = GameObject.Find("Managers/UI_Manager").GetComponent<UI_Manager>();
-		FadingInOut = GameObject.Find ("FPSController/CameraHolder/FirstPersonCharacter").GetComponent<FadingInOut> ();
+		Fading = GameObject.Find ("FPSController/CameraHolder/FirstPersonCharacter").GetComponent<FadingInOut> ();
 		// 
 		controller = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
 		ReticleRaycast = Player.GetComponent<ReticleRaycast>();
 		//
-		FadingInOut.BeginFade(-1);
+		Fading.alpha = 1;
+		Fading.BeginFade(-1);
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		timeStarted = true;
@@ -92,8 +93,8 @@ public class GameManager : MonoBehaviour {
 		Fade up a new canvas element that contains a whole lot of stuff, including
 		time, score, how many cursed items, was the "Elixir of Life" found
 		*/
-		FadingInOut.alpha = 0;
-		FadingInOut.BeginFade (1);
+		Fading.alpha = 0;
+		Fading.BeginFade (1);
 		UI_Manager.EndGameMenu.SetActive(true);
 		DisablePlayerController(true);
 		yield return null;
