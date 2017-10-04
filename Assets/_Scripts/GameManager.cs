@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
 
 	void Start () {
 		UI_Manager = GameObject.Find("Managers/UI_Manager").GetComponent<UI_Manager>();
+		FadingInOut = GameObject.Find ("FPSController/CameraHolder/FirstPersonCharacter").GetComponent<FadingInOut> ();
 		// 
 		controller = Player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
 		ReticleRaycast = Player.GetComponent<ReticleRaycast>();
