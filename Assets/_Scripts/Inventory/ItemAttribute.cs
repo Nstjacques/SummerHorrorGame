@@ -6,5 +6,5 @@ public class ItemAttribute : MonoBehaviour {
 	public string itemName;
 	public float Weight;
 	public int Value;
-
+	public GameObject prefab;
 }
