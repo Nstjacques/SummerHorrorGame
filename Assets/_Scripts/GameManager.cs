@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour {
 	// public GameObject currentClick;
 	
 	[Header("Game Data")]
+	//In-game Time Count
+	public float playTime;
+	public bool timeStarted = false;
 	// How many cursed items does the player have
 	public int cursedItemCount = 0;
 	// How many pieces of the passcode does the player have
@@ -37,6 +40,10 @@ public class GameManager : MonoBehaviour {
 		//
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
+		timeStarted = true;
+	}
+	void Update() {
+		playTime += Time.deltaTime;
 	}
 
 	public void DisablePlayerController(bool status){
