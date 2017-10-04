@@ -10,11 +10,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+		public GameManager GameManager;
+
         [SerializeField] private bool m_IsWalking;
 		[SerializeField] private bool m_IsCrouching;
         public float m_WalkSpeed;
 		public float m_CrouchSpeed;
 		public float m_CurrentSpeed;
+		[SerializeField] private float m_Weight;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
@@ -56,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+			GameManager = GameObject.Find("Managers/GameManager").GetComponent<GameManager>();
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -98,7 +102,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
-
+			m_Weight = GameManager.currentWeight;
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
 
         }
@@ -252,7 +256,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_CurrentSpeed : m_RunSpeed;
+			speed = (m_IsWalking ? m_CurrentSpeed : m_RunSpeed) * Mathf.Clamp01( 1.0f - GameManager.currentWeight);
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -273,8 +277,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_IsCrouching = true;
 
 
-			//t += Time.deltaTime / m_CrouchTime;
-			//m_CameraHolder.transform.localPosition =  Vector3.Lerp (m_WalkPos, m_CrouchPos, t);
+			m_CameraHolder.transform.localPosition =  Vector3.Lerp (m_WalkPos, m_CrouchPos, m_CrouchTime);
 		}
 
 

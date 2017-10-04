@@ -121,8 +121,8 @@ public class UI_Manager : MonoBehaviour {
 				// Populates the UI with all the important information
 				Transform stats_panel = Item.transform.GetChild(0);
 				stats_panel.GetChild(0).GetComponent<Text>().text = reference.Name;
-				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + reference.Value.ToString();
-				stats_panel.GetChild(2).GetComponent<Text>().text = value_str + reference.Weight.ToString();
+				stats_panel.GetChild(1).GetComponent<Text>().text = weight_str + reference.Weight.ToString();
+				stats_panel.GetChild (2).GetComponent<Text> ().text = value_str + reference.Value.ToString ();
 				
 				// This int tracks how many panels have been made, so it only creates new ones whenever you open the inventory!
 				objectPanelsThatExist++;

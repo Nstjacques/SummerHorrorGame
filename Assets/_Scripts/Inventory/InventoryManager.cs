@@ -45,9 +45,12 @@ public class InventoryManager : MonoBehaviour {
 		// TODO: Update the player's stats
 
 		item.prefab.transform.position = GameManager.Player.transform.position;
+	
 
 		listofObjects.Remove(item);
 		Destroy(UI_thing);
 		UI_Manager.objectPanelsThatExist -=1;
+		GameManager.currentWeight -= itemAttribute.Weight;
+		GameManager.score -= itemAttribute.Value;
 	}
 }

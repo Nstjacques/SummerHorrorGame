@@ -481,7 +481,7 @@ MonoBehaviour:
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   m_CameraHolder: {fileID: 1020484870873716}
   t: 0
-  m_CrouchTime: 0.25
+  m_CrouchTime: 1
 --- !u!114 &114558783396070178
 MonoBehaviour:
   m_ObjectHideFlags: 1
