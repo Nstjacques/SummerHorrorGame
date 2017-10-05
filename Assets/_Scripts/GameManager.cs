@@ -102,6 +102,9 @@ public class GameManager : MonoBehaviour {
 		timeStarted = false;
 		Fading.alpha = 0;
 		Fading.BeginFade (1);
+		yield return new WaitForSeconds (2f);
+		Fading.alpha = 1;
+		Fading.BeginFade (-1);
 		UI_Manager.EndGameMenu.SetActive(true);
 		DisablePlayerController(true);
 		yield return null;

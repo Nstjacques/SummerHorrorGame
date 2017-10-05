@@ -192,5 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8ee1999aebcab4d939b7a3376027ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySlots: 9
   BadItemPrison: {fileID: 0}
