@@ -102,8 +102,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = 0f;
             }
+			m_CrouchSpeed = (m_WalkSpeed * 0.5f);
 			m_Weight = GameManager.currentWeight;
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			if (m_Weight == 0) {
+				m_WalkSpeed = 3.5f;	
+			}
 
         }
 
