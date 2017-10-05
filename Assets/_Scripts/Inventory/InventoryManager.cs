@@ -43,10 +43,7 @@ public class InventoryManager : MonoBehaviour {
 
 	public void DropObject(Item item, GameObject UI_thing){
 		// TODO: Update the player's stats
-
 		item.prefab.transform.position = GameManager.Player.transform.position;
-	
-
 		listofObjects.Remove(item);
 		Destroy(UI_thing);
 		UI_Manager.objectPanelsThatExist -=1;
